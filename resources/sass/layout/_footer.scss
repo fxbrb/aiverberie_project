@@ -1,0 +1,35 @@
+footer {
+    .footer__main {
+        background: #90d535;
+        padding: 20px 0;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 35px;
+            }
+
+            .main__menu {
+                ul {
+                    li {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        background: #22a3ff;
+        padding: 20px 0;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

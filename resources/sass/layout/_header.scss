@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+
+    .header__menu {
+        ul {
+            display: flex;
+            gap: 50px;
+
+            li {
+                a {
+
+                }
+            }
+        }
+    }
+}
