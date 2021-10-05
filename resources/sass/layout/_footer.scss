@@ -1,29 +1,57 @@
 footer {
     .footer__main {
-        background: #90d535;
-        padding: 20px 0;
+        background: #87c338;
+        padding: 40px 0;
 
         > div {
             display: flex;
             justify-content: space-between;
+            gap: 40px;
 
             h2 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
                 font-size: 18px;
-                margin-bottom: 35px;
+                color: #323232;
+                text-transform: uppercase;
+                margin-bottom: 30px;
             }
 
             .main__menu {
+                width: 33%;
+
                 ul {
                     li {
-                        margin-bottom: 20px;
+                        margin-bottom: 10px;
+
+                        a {
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #fff;
+                        }
                     }
                 }
+            }
+
+            .main__partners {
+                width: 33%;
+
+                .partners__list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            }
+
+            .main__infos {
+                width: 33%;
             }
         }
     }
 
     .copyright {
-        background: #22a3ff;
+        background: #69a8f5;
         padding: 20px 0;
 
         > div {

@@ -1,10 +1,18 @@
 // ABSTRACT
 @import "abstracts/variables";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
 // BASE
 @import "base/reset";
+@import "base/typography";
 
 // COMPONENTS
 @import "layout/container";
 @import "layout/header";
 @import "layout/footer";
+
+// PAGES
+@import "pages/home";

@@ -1,0 +1,168 @@
+.home {
+    section.services {
+        padding: 50px 0;
+
+        h2 {
+            font-size: 25px;
+            color: #3992ff;
+            margin-bottom: 30px;
+        }
+
+        .services__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .service {
+                width: 350px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                box-shadow: 10px 10px 15px rgb(223 223 223);
+
+                &:hover {
+                    p {
+                        transform: scale(1.2);
+                    }
+                }
+
+                &.individual {
+                    background: url('https://via.placeholder.com/350x200');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.pro {
+                    background: url('https://via.placeholder.com/350x200');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.community {
+                    background: url('https://via.placeholder.com/350x200');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.jobseekers {
+                    background: url('https://via.placeholder.com/350x200');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                p {
+                    width: 65%;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    color: #fff;
+                    transition: all 300ms;
+                }
+            }
+        }
+    }
+
+    section.about {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 50px 0;
+
+        img {
+            border-radius: 5px;
+            box-shadow: 10px 10px 15px rgb(223 223 223);
+        }
+
+        .about__content {
+            h2 {
+                font-size: 25px;
+                color: #3992ff;
+                margin-bottom: 30px;
+            }
+
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+
+    section.jobs {
+        padding: 50px 0;
+
+        h2 {
+            font-size: 25px;
+            color: #3992ff;
+            margin-bottom: 30px;
+        }
+
+        .jobs__list {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            .job {
+                padding: 20px;
+                box-shadow: 0px 0px 15px #dfdfdf;
+                border-radius: 5px;
+                background: #fff;
+                transition: all 300ms;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                h3 {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #87c338;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 25px;
+                    margin-bottom: 30px;
+                }
+
+                .job__infos {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    > div {
+                        display: flex;
+                        gap: 20px;
+
+                        span {
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 300;
+
+                            i {
+                                color: #87c338;
+                            }
+                        }
+                    }
+
+                    a {
+                        border: 1px solid #3992ff;
+                        color: #fff;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        background: #3992ff;
+                        font-size: 15px;
+                        transition: all 300ms;
+
+                        &:hover {
+                            background: #fff;
+                            color: #3992ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
