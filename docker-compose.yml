@@ -7,7 +7,7 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: bdf-app
+    image: aiverberie
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
