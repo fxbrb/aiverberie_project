@@ -4,6 +4,10 @@ header {
     justify-content: space-between;
     padding: 0 100px;
 
+    @media screen and (max-width: 1121px) {
+        justify-content: center;
+    }
+
     .header__logo {
         img {
             height: 100px;
@@ -15,6 +19,10 @@ header {
             display: flex;
             gap: 50px;
 
+            @media screen and (max-width: 1121px) {
+                display: none;
+            }
+
             li {
                 a {
                     font-family: "Poppins", sans-serif;
@@ -23,13 +31,132 @@ header {
                     color: #323232;
                     text-transform: uppercase;
                     transition: all 300ms;
+                    position: relative;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 11px;
+                    }
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: -4px;
+                        height: 2px;
+                        width: 100%;
+                        background: #6ba5d9;
+                        transform: scaleX(0);
+                        transition: transform 0.3s ease-in-out;
+                        transform-origin: left;
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                        color: #6ba5d9;
+                    }
 
                     &:hover {
-                        color: #6BA5D9;
+                        color: #6ba5d9;
                     }
 
                     .active {
-                        color: #6BA5D9;
+                        color: #126ebe;
+                    }
+                }
+            }
+        }
+
+        .button {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 35px;
+            z-index: 99999;
+            font-size: 20px;
+
+            @media screen and (max-width: 768px) {
+                top: 40px;
+            }
+
+            @media screen and (max-width: 425px) {
+                top: 45px;
+            }
+
+            @media screen and (max-width: 1121px) {
+                display: inline;
+            }
+
+            .button a {
+                text-decoration: none;
+            }
+
+            .btn-open::after {
+                color: #3992ff;
+                content: "\f0c9";
+                font-family: "FontAwesome";
+                font-size: 30px;
+                transition-property: all 0.2s linear 0s;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 25px;
+                }
+
+                @media screen and (max-width: 425px) {
+                    font-size: 20px;
+                }
+            }
+
+            .btn-close::after {
+                color: #ffffff;
+                content: "\f00d";
+                font-size: 30px;
+                font-family: "FontAwesome";
+                transition-property: all 0.2s linear 0s;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 25px;
+                }
+
+                @media screen and (max-width: 425px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #3992ff;
+    overflow: auto;
+    z-index: 9999;
+
+    .wrap {
+        color: #3992ff;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+
+        ul {
+            padding: 50px 0;
+
+            li {
+                padding: 5px;
+                a {
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                    transition: all 300ms;
+                    line-height: 10px;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 11px;
                     }
                 }
             }

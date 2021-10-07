@@ -16,13 +16,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 
-// Authentification
+Route::get('/particulier', function () {
+    return view('particulars');
+})->name('particular');
 
-Route::get('login', [AuthController::class, 'loginView'])->name('login');
-Route::post('custom-login', [AuthController::class, 'login'])->name('login.user'); 
-Route::get('register', [AuthController::class, 'registrationView'])->name('register-user');
-Route::post('custom-registration', [AuthController::class, 'registration'])->name('register.user'); 
-Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
+Route::get('/professionnels', function () {
+    return view('professionals');
+})->name('professionals');
+
+Route::get('/demandeurs', function () {
+    return view('applicants');
+})->name('applicants');
+
+Route::get('/offres-emploi', function () {
+    return view('job');
+})->name('job');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+
+
+
+

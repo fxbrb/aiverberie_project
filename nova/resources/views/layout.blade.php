@@ -34,9 +34,9 @@
     <div id="nova">
         <div v-cloak class="flex min-h-screen">
             <!-- Sidebar -->
-            <div class="flex-none pt-header min-h-screen w-sidebar bg-grad-sidebar px-6">
+            <div class="flex-none pt-header min-h-screen w-sidebar bg-grad-sidebar px-6" style="background: #6ba5d9;">
                 <a href="{{ \Laravel\Nova\Nova::path() }}">
-                    <div class="absolute pin-t pin-l pin-r bg-logo flex items-center w-sidebar h-header px-6 text-white">
+                    <div class="absolute pin-t pin-l pin-r bg-logo flex items-center w-sidebar h-header px-6 text-white" style="background-color: #1783e2;">
                        @include('nova::partials.logo')
                     </div>
                 </a>

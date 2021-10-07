@@ -15,9 +15,17 @@ p {
     font-weight: 300;
     font-size: 15px;
     color: #323232;
+
+    
+    @media screen and (max-width: 425px) {
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: 10px;
+    }
 }
 
 a {
     text-decoration: none;
 }
-
