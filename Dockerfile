@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
@@ -6,27 +6,16 @@ ARG uid
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
     git \
     curl \
     libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    libzip-dev \
-    jpegoptim optipng pngquant gifsicle \
     libonig-dev \
     libxml2-dev \
     libzip-dev \
     zip \
     unzip \
     gnupg2 \
-    locales \
-    apt-transport-https \
-    libcurl4
-
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list
-RUN apt-get update && ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools && apt-get install -y unixodbc-dev
-RUN pecl install sqlsrv pdo_sqlsrv
+    locales
 
 # Nodejs
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
@@ -42,7 +31,8 @@ ENV LANGUAGE fr_FR:en
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip intl mysqli
+RUN docker-php-ext-configure zip
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

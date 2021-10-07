@@ -6201,14 +6201,18 @@ a {
 }
 
 .container__base {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 
 header {
   display: flex;
   align-items: center;
-  gap: 100px;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+header .header__logo img {
+  height: 100px;
 }
 header .header__menu ul {
   display: flex;
@@ -6223,10 +6227,10 @@ header .header__menu ul li a {
   transition: all 300ms;
 }
 header .header__menu ul li a:hover {
-  color: #87c338;
+  color: #6BA5D9;
 }
 header .header__menu ul li a .active {
-  color: #87c338;
+  color: #6BA5D9;
 }
 
 footer .footer__main {
@@ -6414,4 +6418,97 @@ footer .copyright > div {
 .home section.jobs .jobs__list .job .job__infos a:hover {
   background: #fff;
   color: #3992ff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0;
+}
+.login-form h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #323232;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.login-form form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form form .form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+.login-form form .form__field {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #6BA5D9;
+  outline: 0;
+  font-size: 13px;
+  color: #6BA5D9;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.login-form form .form__field::-moz-placeholder {
+  color: transparent;
+}
+.login-form form .form__field:-ms-input-placeholder {
+  color: transparent;
+}
+.login-form form .form__field::placeholder {
+  color: transparent;
+}
+.login-form form .form__field:-moz-placeholder-shown ~ .form__label {
+  font-size: 13px;
+  cursor: text;
+  top: 20px;
+}
+.login-form form .form__field:-ms-input-placeholder ~ .form__label {
+  font-size: 13px;
+  cursor: text;
+  top: 20px;
+}
+.login-form form .form__field:placeholder-shown ~ .form__label {
+  font-size: 13px;
+  cursor: text;
+  top: 20px;
+}
+.login-form form .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #6BA5D9;
+}
+.login-form form .form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #3391e2, #6BA5D9);
+     border-image: linear-gradient(to right, #3391e2, #6BA5D9);
+  border-image-slice: 1;
+}
+.login-form form .form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 13px;
+  color: #3391e2;
+  font-weight: 700;
+}
+.login-form form .form__field:required, .login-form form .form__field:invalid {
+  box-shadow: none;
 }

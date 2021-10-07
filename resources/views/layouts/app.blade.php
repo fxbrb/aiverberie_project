@@ -17,10 +17,10 @@
 </head>
 <body>
 
-<header class="container__base">
+<header>
     <div class="header__logo">
         <a href="/">
-            <img src="{{ asset('images/logo-association-intermediaire.jpg') }}"
+            <img src="{{ asset('images/logo-association-intermediaire.svg') }}"
                  alt="Logo association intermédiaire de Verberie">
         </a>
     </div>
