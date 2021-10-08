@@ -3,26 +3,27 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends Resource
+class JobOffer extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\JobOffer::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -30,7 +31,7 @@ class User extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id',
     ];
 
     /**
@@ -42,24 +43,23 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make(__('ID'), 'id')->sortable(),
 
-            Gravatar::make()->maxWidth(50),
-
-            Text::make('Nom et Prénom', 'name')
+            Text::make('Nom', 'title')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Email', 'email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+            Textarea::make('Description', 'description')
+                ->rules('nullable', 'string')
+                ->hideFromIndex(),
 
-            Password::make('Mot de passe', 'password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
+            Text::make('Lieu', 'place')
+                ->sortable()
+                ->rules('required', 'max:255'),
+
+            Text::make('Type de contrat', 'type_of_contract')
+                ->sortable()
+                ->rules('required', 'max:255'),
         ];
     }
 

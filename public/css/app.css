@@ -6195,6 +6195,16 @@ p {
   font-size: 15px;
   color: #323232;
 }
+@media screen and (max-width: 425px) {
+  p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  p {
+    font-size: 10px;
+  }
+}
 
 a {
   text-decoration: none;
@@ -6211,12 +6221,22 @@ header {
   justify-content: space-between;
   padding: 0 100px;
 }
+@media screen and (max-width: 1121px) {
+  header {
+    justify-content: center;
+  }
+}
 header .header__logo img {
   height: 100px;
 }
 header .header__menu ul {
   display: flex;
   gap: 50px;
+}
+@media screen and (max-width: 1121px) {
+  header .header__menu ul {
+    display: none;
+  }
 }
 header .header__menu ul li a {
   font-family: "Poppins", sans-serif;
@@ -6225,22 +6245,150 @@ header .header__menu ul li a {
   color: #323232;
   text-transform: uppercase;
   transition: all 300ms;
+  position: relative;
+}
+@media screen and (max-width: 425px) {
+  header .header__menu ul li a {
+    font-size: 11px;
+  }
+}
+header .header__menu ul li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: #6ba5d9;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+header .header__menu ul li a:hover::after {
+  transform: scaleX(1);
+  color: #6ba5d9;
 }
 header .header__menu ul li a:hover {
-  color: #6BA5D9;
+  color: #6ba5d9;
 }
 header .header__menu ul li a .active {
-  color: #6BA5D9;
+  color: #126ebe;
+}
+header .header__menu .button {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  z-index: 99999;
+  font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  header .header__menu .button {
+    top: 40px;
+  }
+}
+@media screen and (max-width: 425px) {
+  header .header__menu .button {
+    top: 45px;
+  }
+}
+@media screen and (max-width: 1121px) {
+  header .header__menu .button {
+    display: inline;
+  }
+}
+header .header__menu .button .button a {
+  text-decoration: none;
+}
+header .header__menu .button .btn-open::after {
+  color: #3992ff;
+  content: "\f0c9";
+  font-family: "FontAwesome";
+  font-size: 30px;
+  transition-property: all 0.2s linear 0s;
+}
+@media screen and (max-width: 768px) {
+  header .header__menu .button .btn-open::after {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 425px) {
+  header .header__menu .button .btn-open::after {
+    font-size: 20px;
+  }
+}
+header .header__menu .button .btn-close::after {
+  color: #ffffff;
+  content: "\f00d";
+  font-size: 30px;
+  font-family: "FontAwesome";
+  transition-property: all 0.2s linear 0s;
+}
+@media screen and (max-width: 768px) {
+  header .header__menu .button .btn-close::after {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 425px) {
+  header .header__menu .button .btn-close::after {
+    font-size: 20px;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #3992ff;
+  overflow: auto;
+  z-index: 9999;
+}
+.overlay .wrap {
+  color: #3992ff;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.overlay .wrap ul {
+  padding: 50px 0;
+}
+.overlay .wrap ul li {
+  padding: 5px;
+}
+.overlay .wrap ul li a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: all 300ms;
+  line-height: 10px;
+}
+@media screen and (max-width: 425px) {
+  .overlay .wrap ul li a {
+    font-size: 11px;
+  }
 }
 
 footer .footer__main {
-  background: #87c338;
+  background: #69a8f5de;
   padding: 40px 0;
 }
 footer .footer__main > div {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+}
+@media screen and (max-width: 832px) {
+  footer .footer__main > div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 footer .footer__main > div h2 {
   font-family: "Poppins", sans-serif;
@@ -6250,8 +6398,24 @@ footer .footer__main > div h2 {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 425px) {
+  footer .footer__main > div h2 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 320px) {
+  footer .footer__main > div h2 {
+    font-size: 12px;
+  }
+}
 footer .footer__main > div .main__menu {
   width: 33%;
+}
+@media screen and (max-width: 832px) {
+  footer .footer__main > div .main__menu {
+    width: 100%;
+    text-align: center;
+  }
 }
 footer .footer__main > div .main__menu ul li {
   margin-bottom: 10px;
@@ -6262,16 +6426,49 @@ footer .footer__main > div .main__menu ul li a {
   font-size: 14px;
   color: #fff;
 }
+@media screen and (max-width: 425px) {
+  footer .footer__main > div .main__menu ul li a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  footer .footer__main > div .main__menu ul li a {
+    font-size: 10px;
+  }
+}
 footer .footer__main > div .main__partners {
   width: 33%;
+}
+@media screen and (max-width: 832px) {
+  footer .footer__main > div .main__partners {
+    width: 100%;
+    text-align: center;
+  }
 }
 footer .footer__main > div .main__partners .partners__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
+}
+@media screen and (max-width: 832px) {
+  footer .footer__main > div .main__partners .partners__list {
+    justify-content: center;
+  }
 }
 footer .footer__main > div .main__infos {
   width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 832px) {
+  footer .footer__main > div .main__infos {
+    width: 100%;
+  }
+}
+footer .footer__main > div .main__infos img {
+  width: 150px;
 }
 footer .copyright {
   background: #69a8f5;
@@ -6282,6 +6479,20 @@ footer .copyright > div {
   justify-content: space-between;
   align-items: center;
 }
+footer .copyright > div a {
+  color: #fff;
+  font-size: 15px;
+}
+@media screen and (max-width: 425px) {
+  footer .copyright > div a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  footer .copyright > div a {
+    font-size: 10px;
+  }
+}
 
 .home section.services {
   padding: 50px 0;
@@ -6291,10 +6502,41 @@ footer .copyright > div {
   color: #3992ff;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 899px) {
+  .home section.services h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home section.services h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home section.services h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home section.services h2 {
+    font-size: 17px;
+  }
+}
 .home section.services .services__list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 1312px) {
+  .home section.services .services__list {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 899px) {
+  .home section.services .services__list {
+    align-items: center;
+    justify-content: center;
+  }
 }
 .home section.services .services__list .service {
   width: 350px;
@@ -6304,6 +6546,9 @@ footer .copyright > div {
   align-items: center;
   border-radius: 5px;
   box-shadow: 10px 10px 15px #dfdfdf;
+}
+.home section.services .services__list .service:hover {
+  cursor: pointer;
 }
 .home section.services .services__list .service:hover p {
   transform: scale(1.2);
@@ -6343,14 +6588,40 @@ footer .copyright > div {
   gap: 20px;
   padding: 50px 0;
 }
+@media screen and (max-width: 1159px) {
+  .home section.about {
+    flex-direction: column;
+  }
+}
 .home section.about img {
   border-radius: 5px;
   box-shadow: 10px 10px 15px #dfdfdf;
+  width: 100%;
 }
 .home section.about .about__content h2 {
   font-size: 25px;
   color: #3992ff;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 1159px) {
+  .home section.about .about__content h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home section.about .about__content h2 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home section.about .about__content h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home section.about .about__content h2 {
+    font-size: 17px;
+  }
 }
 .home section.about .about__content p {
   line-height: 25px;
@@ -6363,10 +6634,31 @@ footer .copyright > div {
   color: #3992ff;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 768px) {
+  .home section.jobs h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home section.jobs h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home section.jobs h2 {
+    font-size: 17px;
+  }
+}
 .home section.jobs .jobs__list {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1340px) {
+  .home section.jobs .jobs__list {
+    flex-direction: column;
+  }
 }
 .home section.jobs .jobs__list .job {
   padding: 20px;
@@ -6375,20 +6667,55 @@ footer .copyright > div {
   background: #fff;
   transition: all 300ms;
 }
+@media screen and (max-width: 1340px) {
+  .home section.jobs .jobs__list .job {
+    width: 95%;
+  }
+}
 .home section.jobs .jobs__list .job:hover {
   transform: scale(1.1);
 }
 .home section.jobs .jobs__list .job h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #87c338;
+  color: #3992ff;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .home section.jobs .jobs__list .job h3 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home section.jobs .jobs__list .job h3 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home section.jobs .jobs__list .job h3 {
+    font-size: 12px;
+  }
 }
 .home section.jobs .jobs__list .job p {
   font-size: 15px;
   font-weight: 300;
   line-height: 25px;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .home section.jobs .jobs__list .job p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .home section.jobs .jobs__list .job p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home section.jobs .jobs__list .job p {
+    font-size: 10px;
+  }
 }
 .home section.jobs .jobs__list .job .job__infos {
   display: flex;
@@ -6399,116 +6726,39 @@ footer .copyright > div {
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 1405px) {
+  .home section.jobs .jobs__list .job .job__infos > div {
+    gap: 10px;
+  }
+}
 .home section.jobs .jobs__list .job .job__infos > div span {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  font-size: 12px;
 }
 .home section.jobs .jobs__list .job .job__infos > div span i {
-  color: #87c338;
+  color: #3992ff;
 }
 .home section.jobs .jobs__list .job .job__infos a {
   border: 1px solid #3992ff;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   background: #3992ff;
   font-size: 15px;
   transition: all 300ms;
 }
+@media screen and (max-width: 425px) {
+  .home section.jobs .jobs__list .job .job__infos a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home section.jobs .jobs__list .job .job__infos a {
+    font-size: 10px;
+  }
+}
 .home section.jobs .jobs__list .job .job__infos a:hover {
   background: #fff;
   color: #3992ff;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 110px 0;
-}
-.login-form h3 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #323232;
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-.login-form form {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.login-form form .form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 50%;
-}
-.login-form form .form__field {
-  font-family: "Poppins", sans-serif;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid #6BA5D9;
-  outline: 0;
-  font-size: 13px;
-  color: #6BA5D9;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-.login-form form .form__field::-moz-placeholder {
-  color: transparent;
-}
-.login-form form .form__field:-ms-input-placeholder {
-  color: transparent;
-}
-.login-form form .form__field::placeholder {
-  color: transparent;
-}
-.login-form form .form__field:-moz-placeholder-shown ~ .form__label {
-  font-size: 13px;
-  cursor: text;
-  top: 20px;
-}
-.login-form form .form__field:-ms-input-placeholder ~ .form__label {
-  font-size: 13px;
-  cursor: text;
-  top: 20px;
-}
-.login-form form .form__field:placeholder-shown ~ .form__label {
-  font-size: 13px;
-  cursor: text;
-  top: 20px;
-}
-.login-form form .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 13px;
-  color: #6BA5D9;
-}
-.login-form form .form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  -o-border-image: linear-gradient(to right, #3391e2, #6BA5D9);
-     border-image: linear-gradient(to right, #3391e2, #6BA5D9);
-  border-image-slice: 1;
-}
-.login-form form .form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 13px;
-  color: #3391e2;
-  font-weight: 700;
-}
-.login-form form .form__field:required, .login-form form .form__field:invalid {
-  box-shadow: none;
 }
