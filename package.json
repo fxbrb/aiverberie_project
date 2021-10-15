@@ -11,15 +11,21 @@
     },
     "devDependencies": {
         "axios": "^0.21",
+        "css-loader": "^5.2.7",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.42.1",
-        "sass-loader": "^12.1.0"
+        "sass-loader": "^12.1.0",
+        "style-loader": "^2.0.0"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "jquery": "^3.6.0"
+        "aos": "^2.3.4",
+        "dropzone": "^5.9.3",
+        "jquery": "^3.6.0",
+        "leaflet": "^1.7.1",
+        "select2": "^4.1.0-rc.0"
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,26 +19,35 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-
-Route::get('/particulier', function () {
-    return view('particulars');
-})->name('particular');
-
 Route::get('/professionnels', function () {
     return view('professionals');
 })->name('professionals');
 
-Route::get('/demandeurs', function () {
-    return view('applicants');
-})->name('applicants');
+Route::get('/collectivité', function () {
+    return view('collectivity');
+})->name('collectivity');
 
-Route::get('/offres-emploi', function () {
-    return view('job');
-})->name('job');
+Route::get('/qui-sommes-nous', function () {
+    return view('about');
+})->name('about');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// CONTACT
+
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::post('send-message', [ContactController::class, 'contact_association'])->name('contact.send');
+
+
+// JOB OFFER
+Route::get('/offres-emploi', [ContactController::class, 'jobView'])->name('job');
+Route::post('send-job-offer', [ContactController::class, 'send_joboffer'])->name('job.send');
+
+
+// SERVICES
+
+Route::get('/particulier', [ContactController::class, 'particularView'])->name('particular');
+Route::post('send-service-offer', [ContactController::class, 'sendParticularService'])->name('particular.send');
+
+
 
 
 

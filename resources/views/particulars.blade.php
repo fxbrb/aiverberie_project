@@ -7,13 +7,170 @@
         <img src="https://via.placeholder.com/1920x500" alt="" style="width: 100%;">
     </div>
 
-    <div class="container__base">
+    @if(\Session::has('success'))
+    <div class="alert">{{\Session::get('success')}}</div>
+    {{\Session::forget('success')}}
+    @endif
 
+    @if(\Session::has('error'))
+    <div class="alert">{{\Session::get('error')}}</div>
+    {{\Session::forget('errors')}}
+    @endif
+
+    <div class="container__base">
+        <section class="services">
+            <h2 data-aos-duration="800" data-aos="fade-right" data-aos-delay="300">L’association intermédiaire vous propose une solution et sans engagement</h2>
+            <p data-aos-duration="800" data-aos="fade-left" data-aos-delay="400">Les services sont les suivant :</p>
+            <div class="services__card" data-aos-duration="800" data-aos="fade-right" data-aos-delay="500">
+                @foreach(\App\Models\Services::where('service_types_id', '1')->get() as $service)
+                <div class="single__service">
+                    <div class="services__header" style="background-image: url('{{ asset('storage/' . $service->image) }}');
+            background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        <h2>{{$service->name}}</h2>
+                    </div>
+                    <div class="services__text">
+                        <p>{{$service->description}}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </section>
     </div>
 
+    <section class="avantages">
+        <h2 data-aos-duration="800" data-aos="fade-right" data-aos-delay="300">vos avantages</h2>
+
+        <div class="avantages__container">
+            <div class="avantages__box" data-aos-duration="800" data-aos="fade-down" data-aos-delay="400">
+                <div class="avantages__top">
+                    <h3>les économies</h3>
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="avantages__bottom">
+                    <p>Pas de frais de dossier. Crédit ou réduction d'impot de 50% sur le service à la personne.</p>
+                </div>
+            </div>
+
+            <div class="avantages__box" data-aos-duration="800" data-aos="fade-down" data-aos-delay="500">
+                <div class="avantages__top">
+                    <h3>la réactivité</h3>
+                    <i class="fas fa-hourglass"></i>
+                </div>
+                <div class="avantages__bottom">
+                    <p>Réponse ou prise de contact sous 48 heures.</p>
+                </div>
+            </div>
+
+            <div class="avantages__box" data-aos-duration="800" data-aos="fade-down" data-aos-delay="600">
+                <div class="avantages__top">
+                    <h3>la proximité</h3>
+                    <i class="far fa-compass"></i>
+                </div>
+                <div class="avantages__bottom">
+                    <p>Faites travailler des personnes proches de chez vous.</p>
+                </div>
+            </div>
+
+            <div class="avantages__box" data-aos-duration="800" data-aos="fade-down" data-aos-delay="700">
+                <div class="avantages__top">
+                    <h3>la souplesse</h3>
+                    <i class="fas fa-street-view"></i>
+                </div>
+                <div class="avantages__bottom">
+                    <p>Aucune contrainte de durée, ni de fréquence.</p>
+                </div>
+            </div>
+
+            <div class="avantages__box" data-aos-duration="800" data-aos="fade-down" data-aos-delay="800">
+                <div class="avantages__top">
+                    <h3>la sécurité</h3>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="avantages__bottom">
+                    <p>Nous sommes l’employeur, les intervenants sont sous notre responsabilité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impot">
+        <div class="left" data-aos-duration="800" data-aos="fade-right" data-aos-delay="300">
+            <img src="{{ asset('images/logocesu.png') }}" alt="Logo cesu">
+        </div>
+        <div class="right" data-aos-duration="800" data-aos="fade-left" data-aos-delay="300">
+            <h2>Possibilité de crédit d'impôt</h2>
+            <p>50% d'économie, sous réserves de ne pas dépasser le plafond fiscal</p>
+        </div>
+    </section>
+
+    <section class="contact__particulars" id="contact__particulars">
+        <form method="POST" action="{{route('particular.send')}}" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
+            <h2><span>Demande de services</span></h2>
+            @csrf
+            <div class="input-box">
+                <input type="text" name="name" id="name" placeholder="Nom et Prénom">
+            </div>
+            @error('name')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="input-box">
+                <input type="text" name="email" id="email" placeholder="Email">
+            </div>
+            @error('email')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="input-box">
+                <input type="text" name="phone" id="phone" placeholder="Téléphone">
+            </div>
+            @error('phone')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="select-box">
+                <select id="service" name="service[]" multiple>
+                    <option disabled>Sélectionnez un service</option>
+                    @foreach(\App\Models\Services::where('service_types_id', '1')->get() as $service)
+                    <option value="{{ $service->name }}">
+                        {{$service->name}}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+            @error('job')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="input-box message-box">
+                <textarea name="message" id="message" placeholder="Ecrivez votre message..."></textarea>
+            </div>
+            @error('message')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="input-validation">
+                <input type="checkbox" name="validation_form" id="validation_form">
+                <label for="validation_form">En cochant cette case, vous acceptez que les informations
+                    saisies dans ce formulaire soient utilisées dans le cadre de la demande
+                    de contact et de la relation commerciale qui peut en découler
+                </label>
+            </div>
+            @error('validation_form')
+            <div class="error-message">{{ $message }}</div>
+            @enderror
+            <div class="button">
+                <input type="submit" class="submit-btn" value="Envoyer">
+            </div>
+        </form>
+    </section>
+
 </div>
-
-
-
-
 @endsection
+
+@push('scripts')
+
+<script>
+    $(document).ready(function() {
+        $("#service").select2({
+            placeholder: "Sélectionnez vos services"
+        });
+
+    });
+</script>
+@endpush

@@ -3,7 +3,9 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -33,6 +35,28 @@ class Services extends Resource
         'id',
     ];
 
+        /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return __('un service');
+    }
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return __('Services');
+    }
+
+    public static $group = "Services";
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -48,9 +72,14 @@ class Services extends Resource
             ->sortable()
             ->rules('required', 'max:255'),
 
+            Image::make('Photo', 'image')
+            ->rounded(),
+
             Textarea::make('Description', 'description')
             ->rules('nullable', 'string')
             ->hideFromIndex(),
+
+            BelongsTo::make('Type de service', 'service_types', ServiceType::class),
         ];
     }
 

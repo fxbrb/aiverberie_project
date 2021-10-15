@@ -17,7 +17,8 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/nova": "*"
+        "laravel/nova": "*",
+        "cornford/googlmapper": "3.*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
