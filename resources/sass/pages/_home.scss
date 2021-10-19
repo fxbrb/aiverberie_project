@@ -56,28 +56,31 @@
                 }
 
                 &.individual {
-                    background: url("https://via.placeholder.com/350x200");
+                    background: url("../../../public/images/particular.jpg");
                     background-repeat: no-repeat;
                     background-size: cover;
+                    filter: contrast(120%);
                 }
 
                 &.pro {
-                    background: url("https://via.placeholder.com/350x200");
+                    background: url("../../../public/images/jobseeker.jpeg");
                     background-repeat: no-repeat;
                     background-size: cover;
+                    filter: contrast(120%);
                 }
 
                 &.community {
-                    background: url("https://via.placeholder.com/350x200");
+                    background: url("../../../public/images/community.jpg");
                     background-repeat: no-repeat;
                     background-size: cover;
+                    filter: contrast(120%);
                 }
 
-                &.jobseekers {
-                    background: url("https://via.placeholder.com/350x200");
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
+                // &.jobseekers {
+                //     background: url("../../../public/images/jobseeker.jpeg");
+                //     background-repeat: no-repeat;
+                //     background-size: cover;
+                // }
 
                 p {
                     width: 65%;
@@ -86,7 +89,10 @@
                     font-weight: 600;
                     line-height: 30px;
                     color: #fff;
+                    padding: 3px;
                     transition: all 300ms;
+                    background: rgba(0,0,0,0.1);
+                    backdrop-filter: grayscale(1) contrast(1) blur(2px);
                 }
             }
         }

@@ -1,4 +1,4 @@
-.particular {
+.professionals {
     .services {
         padding: 50px 0;
 
@@ -87,44 +87,13 @@
     }
 }
 
-.contact__particulars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0;
-
-    h2 {
-        color: #3992ff;
-        margin-bottom: 30px;
-
-        span {
-            position: relative;
-
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                bottom: -5px;
-                height: 2px;
-                width: 100%;
-                background: #94c356;
-            }
-        }
-    }
-
-    p {
-        margin: 20px 0;
-    }
-}
-
-.avantages {
+.avantages__pro {
     padding: 50px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #3992ff;
+    background-color: #94c356;
 
     @media screen and (max-width: 393px) {
         padding: 50px 50px;
@@ -193,25 +162,33 @@
     }
 }
 
-.impot {
-    padding: 50px 0;
+.contact__professionals {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    img {
-        width: 150px;
-    }
+    padding: 50px 0;
 
     h2 {
-        margin-bottom: 20px;
-    }
-    .right{
+        color: #3992ff;
+        margin-bottom: 30px;
 
-        @media screen and (max-width: 605px) {
-            text-align: center;
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: -5px;
+                height: 2px;
+                width: 100%;
+                background: #94c356;
+            }
         }
+    }
+
+    p {
+        margin: 20px 0;
     }
 }

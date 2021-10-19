@@ -4,11 +4,11 @@ import L from "leaflet";
 import Dropzone from "dropzone";
 
 $(document).ready(function () {
-    $("nav ul li a")
-        .filter(function () {
-            return this.href === location.href;
-        })
-        .addClass("active");
+
+
+    $('header .header__menu ul li a').filter(function(){
+        return this.href === location.href;
+      }).addClass('active');
 
     setTimeout(function () {
         $(".alert").fadeOut(400);
@@ -43,7 +43,7 @@ $(document).ready(function () {
             },
         });
         $(".historical").addClass("opacity-0");
-        // $(".mission").addClass("opacity-0");
+        $(".mission").addClass("opacity-0");
         $(".territory").addClass("opacity-0");
         $("header").addClass("opacity-0");
         $("footer").addClass("opacity-0");
@@ -52,7 +52,7 @@ $(document).ready(function () {
     $("#directors__close").click(function () {
         $(".directors__modal").fadeOut();
         $(".historical").removeClass("opacity-0");
-        // $(".mission").removeClass("opacity-0");
+        $(".mission").removeClass("opacity-0");
         $(".territory").removeClass("opacity-0");
         $("header").removeClass("opacity-0");
         $("footer").removeClass("opacity-0");
@@ -65,7 +65,7 @@ $(document).ready(function () {
             },
         });
         $(".historical").addClass("opacity-0");
-        // $(".mission").addClass("opacity-0");
+        $(".mission").addClass("opacity-0");
         $(".territory").addClass("opacity-0");
         $("header").addClass("opacity-0");
         $("footer").addClass("opacity-0");
@@ -74,11 +74,12 @@ $(document).ready(function () {
     $("#permanents__close").click(function () {
         $(".permanents__modal").fadeOut();
         $(".historical").removeClass("opacity-0");
-        // $(".mission").removeClass("opacity-0");
+        $(".mission").removeClass("opacity-0");
         $(".territory").removeClass("opacity-0");
         $("header").removeClass("opacity-0");
         $("footer").removeClass("opacity-0");
     });
+
 });
 
 var mymap = L.map("mapid").setView([49.3072731, 2.7214514], 15);
@@ -100,16 +101,7 @@ L.tileLayer(
         tileSize: 512,
         zoomOffset: -1,
         accessToken:
-            "sk.eyJ1IjoiZnJhbmNvaXM5NiIsImEiOiJja3VudWlkc3YxcmEwMndvNmkzcGx6MzI0In0.PHR2xtHuG2Qo9XII1USGQw",
+            "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA",
     }
 ).addTo(mymap);
 
-
-Dropzone.autoDiscover = false;
-let myDropzone = new Dropzone("#attachment");
-
-myDropzone.on("addedfile", file => {
-
-  console.log(`File added: ${file.name}`);
-
-});

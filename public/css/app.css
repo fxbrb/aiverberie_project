@@ -7139,6 +7139,14 @@ a {
   opacity: 0.5;
 }
 
+.opacity {
+  opacity: 0;
+}
+
+.active {
+  color: #94c356 !important;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -7189,9 +7197,6 @@ header .header__menu ul li a:hover::after {
 }
 header .header__menu ul li a:hover {
   color: #94c356;
-}
-header .header__menu ul li a .active {
-  color: red;
 }
 header .header__menu .button {
   display: none;
@@ -7430,8 +7435,7 @@ footer .copyright > div a {
   border-radius: 4px;
   font-size: 15px;
   cursor: text;
-  padding-bottom: 5px;
-  padding-right: 5px;
+  padding: 13px;
   position: relative;
 }
 @media screen and (max-width: 768px) {
@@ -7442,11 +7446,13 @@ footer .copyright > div a {
 @media screen and (max-width: 425px) {
   .select2-container--default .select2-selection--multiple {
     font-size: 11px;
+    padding: 8px;
   }
 }
 @media screen and (max-width: 375px) {
   .select2-container--default .select2-selection--multiple {
     font-size: 10px;
+    padding: 5px;
   }
 }
 
@@ -7538,16 +7544,34 @@ footer .copyright > div a {
   padding: 0 4px;
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 4px;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  box-sizing: border-box;
+  border: none;
+  font-size: 100%;
+  margin-top: 5px;
+  margin-left: 0;
+  padding: 0;
+  max-width: 100%;
+  resize: none;
+  height: 18px;
+  vertical-align: bottom;
+  font-family: sans-serif;
+  overflow: hidden;
+  word-break: keep-all;
+}
+@media screen and (max-width: 425px) {
+  .select2-container .select2-search--inline .select2-search__field {
+    margin-left: 5px;
+  }
 }
 
 form {
   width: 50%;
   border-radius: 6px;
   box-shadow: 10px 10px 15px 10px #dfdfdf;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   padding: 40px;
 }
 @media screen and (max-width: 975px) {
@@ -7566,9 +7590,8 @@ form {
   }
 }
 form .input-box {
-  height: 50px;
   width: 100%;
-  margin: 12px 0;
+  padding-bottom: 20px;
 }
 form .input-box input,
 form .input-box textarea {
@@ -7580,8 +7603,9 @@ form .input-box textarea {
   font-size: 15px;
   background-color: #f0f1f8;
   border-radius: 6px;
-  padding-left: 10px;
   resize: none;
+  padding: 15px 10px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 768px) {
   form .input-box input,
@@ -7593,6 +7617,7 @@ form .input-box textarea {
   form .input-box input,
 form .input-box textarea {
     font-size: 12px;
+    padding: 10px 10px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -7601,8 +7626,15 @@ form .input-box textarea {
     font-size: 10px;
   }
 }
+@media screen and (max-width: 320px) {
+  form .input-box input,
+form .input-box textarea {
+    padding: 8px 10px;
+  }
+}
 form .input-box textarea {
   padding-top: 5px;
+  height: 110px;
 }
 form .input-validation {
   display: flex;
@@ -7673,6 +7705,11 @@ form .error-message {
 }
 form .message-box {
   min-height: 110px;
+}
+@media screen and (max-width: 425px) {
+  form .message-box {
+    padding-top: 25px;
+  }
 }
 form .file-box {
   display: flex;
@@ -7787,9 +7824,17 @@ form .button .submit-btn:hover {
 }
 form .select-box {
   width: 100%;
-  height: 50px;
-  margin: 12px 0;
-  position: relative;
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 425px) {
+  form .select-box {
+    height: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  form .select-box {
+    height: 35px;
+  }
 }
 form .select-box select {
   width: 100%;
@@ -7880,24 +7925,22 @@ form .select-box select {
   transform: scale(1.2);
 }
 .home section.services .services__list .service.individual {
-  background: url("https://via.placeholder.com/350x200");
+  background: url(/images/particular.jpg?f070df65862b1f166025a2376d342d24);
   background-repeat: no-repeat;
   background-size: cover;
+  filter: contrast(120%);
 }
 .home section.services .services__list .service.pro {
-  background: url("https://via.placeholder.com/350x200");
+  background: url(/images/jobseeker.jpeg?ec234cd355c2a33c4eaa7473d5bce641);
   background-repeat: no-repeat;
   background-size: cover;
+  filter: contrast(120%);
 }
 .home section.services .services__list .service.community {
-  background: url("https://via.placeholder.com/350x200");
+  background: url(/images/community.jpg?e409abbdbac9c02e866b2e28aa5c389a);
   background-repeat: no-repeat;
   background-size: cover;
-}
-.home section.services .services__list .service.jobseekers {
-  background: url("https://via.placeholder.com/350x200");
-  background-repeat: no-repeat;
-  background-size: cover;
+  filter: contrast(120%);
 }
 .home section.services .services__list .service p {
   width: 65%;
@@ -7906,7 +7949,11 @@ form .select-box select {
   font-weight: 600;
   line-height: 30px;
   color: #fff;
+  padding: 3px;
   transition: all 300ms;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: grayscale(1) contrast(1) blur(2px);
+          backdrop-filter: grayscale(1) contrast(1) blur(2px);
 }
 .home section.about {
   display: flex;
@@ -8093,18 +8140,18 @@ form .select-box select {
   color: #3992ff;
 }
 
-.content {
+.content__contact {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 80px 0;
 }
 @media screen and (max-width: 820px) {
-  .content {
+  .content__contact {
     flex-direction: column-reverse;
   }
 }
-.content .left-side {
+.content__contact .left-side {
   width: 25%;
   height: 100%;
   display: flex;
@@ -8114,7 +8161,7 @@ form .select-box select {
   position: relative;
 }
 @media screen and (max-width: 820px) {
-  .content .left-side {
+  .content__contact .left-side {
     width: 100%;
     flex-direction: row;
     margin-top: 40px;
@@ -8122,23 +8169,23 @@ form .select-box select {
     flex-wrap: wrap;
   }
 }
-.content .left-side .details {
+.content__contact .left-side .details {
   margin: 14px;
   text-align: center;
 }
-.content .left-side .details i {
+.content__contact .left-side .details i {
   font-size: 25px;
   margin-bottom: 10px;
   color: #3992ff;
 }
-.content .left-side .details .details-title {
+.content__contact .left-side .details .details-title {
   font-size: 18px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: #3992ff;
   margin-bottom: 10px;
 }
-.content .right-side {
+.content__contact .right-side {
   width: 75%;
   display: flex;
   flex-direction: column;
@@ -8146,19 +8193,19 @@ form .select-box select {
   align-items: center;
 }
 @media screen and (max-width: 820px) {
-  .content .right-side {
+  .content__contact .right-side {
     width: 100%;
     margin-left: 0;
   }
 }
-.content .right-side h2 {
+.content__contact .right-side h2 {
   color: #3992ff;
   line-height: 45px;
 }
-.content .right-side h2 span {
+.content__contact .right-side h2 span {
   position: relative;
 }
-.content .right-side h2 span::after {
+.content__contact .right-side h2 span::after {
   content: "";
   display: block;
   position: absolute;
@@ -8167,10 +8214,10 @@ form .select-box select {
   width: 100%;
   background: #94c356;
 }
-.content .right-side p {
+.content__contact .right-side p {
   margin: 20px 0;
 }
-.content .right-side form {
+.content__contact .right-side form {
   width: 80%;
 }
 
@@ -8272,21 +8319,22 @@ form .select-box select {
 .particular .services .services__card .single__service .services__text {
   padding: 40px 30px;
 }
-.particular .contact__particulars {
+
+.contact__particulars {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
 }
-.particular .contact__particulars h2 {
+.contact__particulars h2 {
   color: #3992ff;
   margin-bottom: 30px;
 }
-.particular .contact__particulars h2 span {
+.contact__particulars h2 span {
   position: relative;
 }
-.particular .contact__particulars h2 span::after {
+.contact__particulars h2 span::after {
   content: "";
   display: block;
   position: absolute;
@@ -8295,7 +8343,7 @@ form .select-box select {
   width: 100%;
   background: #94c356;
 }
-.particular .contact__particulars p {
+.contact__particulars p {
   margin: 20px 0;
 }
 
@@ -8305,12 +8353,33 @@ form .select-box select {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #94c356;
+  background-color: #3992ff;
+}
+@media screen and (max-width: 393px) {
+  .avantages {
+    padding: 50px 50px;
+  }
 }
 .avantages h2 {
   margin-bottom: 30px;
   text-transform: uppercase;
   color: #ffffff;
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  .avantages h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .avantages h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .avantages h2 {
+    font-size: 14px;
+  }
 }
 .avantages .avantages__container {
   display: flex;
@@ -8440,7 +8509,6 @@ form .select-box select {
   position: relative;
 }
 .structure h2 {
-  font-size: 25px;
   color: #3992ff;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -8509,7 +8577,8 @@ form .select-box select {
   background-color: white;
   margin: 0 auto;
   padding: 40px;
-  border: 2px solid #3992ff;
+  border: 1px solid #3992ff;
+  border-radius: 6px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -8517,6 +8586,7 @@ form .select-box select {
   position: absolute;
   overflow: auto;
   height: 500px;
+  z-index: 1;
 }
 .structure .directors__modal > div {
   display: none;
@@ -8553,15 +8623,15 @@ form .select-box select {
   flex-direction: column;
   justify-content: space-around;
 }
-.structure .directors__modal #directors__team h3 {
+.structure .directors__modal #directors__team h2 {
   text-align: center;
-  color: #3992ff;
 }
 .structure .permanents__modal {
   background-color: white;
   margin: 0 auto;
   padding: 40px;
-  border: 2px solid #3992ff;
+  border: 1px solid #3992ff;
+  border-radius: 6px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -8569,6 +8639,7 @@ form .select-box select {
   position: absolute;
   overflow: auto;
   height: 500px;
+  z-index: 1;
 }
 .structure .permanents__modal > div {
   display: none;
@@ -8617,13 +8688,18 @@ form .select-box select {
   flex-wrap: wrap;
   margin: 40px 0;
 }
+@media screen and (max-width: 425px) {
+  .structure .container-card {
+    margin: 10px 0;
+  }
+}
 .structure .container-card .card {
   position: relative;
   background: #69a8f5de;
   margin: 20px;
   box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  padding: 0 60px;
+  padding: 50px 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8631,7 +8707,8 @@ form .select-box select {
 }
 @media screen and (max-width: 425px) {
   .structure .container-card .card {
-    padding: 0 40px;
+    padding: 40px 40px;
+    width: 100%;
   }
 }
 .structure .container-card .card:hover .content {
@@ -8645,7 +8722,7 @@ form .select-box select {
   flex-direction: column;
   transition: 0.5s;
 }
-.structure .container-card .card .content .imgBox {
+.structure .container-card .card .content .imgBx {
   position: relative;
   width: 150px;
   height: 150px;
@@ -8654,12 +8731,12 @@ form .select-box select {
   border: 10px solid rgba(255, 255, 255, 0.5);
 }
 @media screen and (max-width: 425px) {
-  .structure .container-card .card .content .imgBox {
+  .structure .container-card .card .content .imgBx {
     width: 120px;
     height: 120px;
   }
 }
-.structure .container-card .card .content .imgBox img {
+.structure .container-card .card .content .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -8668,7 +8745,7 @@ form .select-box select {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.structure .container-card .card .content .contentBox h3 {
+.structure .container-card .card .content .contentBx h3 {
   color: black;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
@@ -8680,37 +8757,37 @@ form .select-box select {
   line-height: 1.1em;
 }
 @media screen and (max-width: 768px) {
-  .structure .container-card .card .content .contentBox h3 {
+  .structure .container-card .card .content .contentBx h3 {
     font-size: 15px;
   }
 }
 @media screen and (max-width: 425px) {
-  .structure .container-card .card .content .contentBox h3 {
+  .structure .container-card .card .content .contentBx h3 {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 320px) {
-  .structure .container-card .card .content .contentBox h3 {
+  .structure .container-card .card .content .contentBx h3 {
     font-size: 12px;
   }
 }
-.structure .container-card .card .content .contentBox h3 span {
+.structure .container-card .card .content .contentBx h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
 }
 @media screen and (max-width: 768px) {
-  .structure .container-card .card .content .contentBox h3 span {
+  .structure .container-card .card .content .contentBx h3 span {
     font-size: 10px;
   }
 }
 @media screen and (max-width: 425px) {
-  .structure .container-card .card .content .contentBox h3 span {
+  .structure .container-card .card .content .contentBx h3 span {
     font-size: 9px;
   }
 }
 @media screen and (max-width: 375px) {
-  .structure .container-card .card .content .contentBox h3 span {
+  .structure .container-card .card .content .contentBx h3 span {
     font-size: 8px;
   }
 }
@@ -8965,7 +9042,6 @@ form .select-box select {
 }
 .jobOffers .contact__jobs {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
@@ -8989,4 +9065,511 @@ form .select-box select {
 }
 .jobOffers .contact__jobs p {
   margin: 20px 0;
+}
+.jobOffers .why__job {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3992ffd5;
+}
+@media screen and (max-width: 393px) {
+  .jobOffers .why__job {
+    padding: 50px 50px;
+  }
+}
+.jobOffers .why__job h2 {
+  margin-bottom: 30px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .jobOffers .why__job h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .jobOffers .why__job h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .jobOffers .why__job h2 {
+    font-size: 14px;
+  }
+}
+.jobOffers .why__job .why__container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.jobOffers .why__job .why__container .why__box {
+  width: 25%;
+  padding: 20px;
+}
+@media screen and (max-width: 999px) {
+  .jobOffers .why__job .why__container .why__box {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 799px) {
+  .jobOffers .why__job .why__container .why__box {
+    width: 100%;
+    text-align: center;
+  }
+}
+.jobOffers .why__job .why__container .why__box h3 {
+  color: #323232;
+  text-transform: uppercase;
+}
+.jobOffers .why__job .why__container .why__box .why__top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 799px) {
+  .jobOffers .why__job .why__container .why__box .why__top {
+    justify-content: center;
+  }
+}
+.jobOffers .why__job .why__container .why__box .why__top i {
+  color: #323232;
+  font-size: 25px;
+}
+.jobOffers .why__job .arrow {
+  color: #323232;
+  text-decoration: none;
+  -webkit-animation: bounce 3s infinite;
+          animation: bounce 3s infinite;
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.professionals .services {
+  padding: 50px 0;
+}
+.professionals .services h2 {
+  font-size: 25px;
+  color: #3992ff;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 899px) {
+  .professionals .services h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .professionals .services h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .professionals .services h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .professionals .services h2 {
+    font-size: 17px;
+  }
+}
+.professionals .services .services__card {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.professionals .services .services__card .single__service {
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px #dfdfdf;
+  width: 30%;
+  transition: all 300ms;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.professionals .services .services__card .single__service:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 999px) {
+  .professionals .services .services__card .single__service {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .professionals .services .services__card .single__service {
+    width: 100%;
+  }
+}
+.professionals .services .services__card .single__service .services__header {
+  height: 200px;
+  position: relative;
+}
+.professionals .services .services__card .single__service .services__header h2 {
+  color: #ffffff;
+  background: #3992ff;
+  border: 1px solid #3992ff;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin: 0;
+  border-radius: 50px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.professionals .services .services__card .single__service .services__header h2:hover {
+  background: #fff;
+  color: #3992ff;
+}
+.professionals .services .services__card .single__service .services__text {
+  padding: 40px 30px;
+}
+
+.avantages__pro {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #94c356;
+}
+@media screen and (max-width: 393px) {
+  .avantages__pro {
+    padding: 50px 50px;
+  }
+}
+.avantages__pro h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  .avantages__pro h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .avantages__pro h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .avantages__pro h2 {
+    font-size: 14px;
+  }
+}
+.avantages__pro .avantages__container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.avantages__pro .avantages__container .avantages__box {
+  width: 25%;
+  padding: 20px;
+}
+@media screen and (max-width: 999px) {
+  .avantages__pro .avantages__container .avantages__box {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 799px) {
+  .avantages__pro .avantages__container .avantages__box {
+    width: 100%;
+    text-align: center;
+  }
+}
+.avantages__pro .avantages__container .avantages__box h3 {
+  color: #323232;
+  text-transform: uppercase;
+}
+.avantages__pro .avantages__container .avantages__box .avantages__top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 799px) {
+  .avantages__pro .avantages__container .avantages__box .avantages__top {
+    justify-content: center;
+  }
+}
+.avantages__pro .avantages__container .avantages__box .avantages__top i {
+  color: #323232;
+  font-size: 25px;
+}
+
+.contact__professionals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.contact__professionals h2 {
+  color: #3992ff;
+  margin-bottom: 30px;
+}
+.contact__professionals h2 span {
+  position: relative;
+}
+.contact__professionals h2 span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background: #94c356;
+}
+.contact__professionals p {
+  margin: 20px 0;
+}
+
+.collectivity .services {
+  padding: 50px 0;
+}
+.collectivity .services h2 {
+  font-size: 25px;
+  color: #3992ff;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 899px) {
+  .collectivity .services h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .collectivity .services h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .collectivity .services h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .collectivity .services h2 {
+    font-size: 17px;
+  }
+}
+.collectivity .services .services__card {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.collectivity .services .services__card .single__service {
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px #dfdfdf;
+  width: 30%;
+  transition: all 300ms;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.collectivity .services .services__card .single__service:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 999px) {
+  .collectivity .services .services__card .single__service {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .collectivity .services .services__card .single__service {
+    width: 100%;
+  }
+}
+.collectivity .services .services__card .single__service .services__header {
+  height: 200px;
+  position: relative;
+}
+.collectivity .services .services__card .single__service .services__header h2 {
+  color: #ffffff;
+  background: #3992ff;
+  border: 1px solid #3992ff;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin: 0;
+  border-radius: 50px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.collectivity .services .services__card .single__service .services__header h2:hover {
+  background: #fff;
+  color: #3992ff;
+}
+.collectivity .services .services__card .single__service .services__text {
+  padding: 40px 30px;
+}
+
+.avantages__collectivity {
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #94c356b6;
+}
+@media screen and (max-width: 393px) {
+  .avantages__collectivity {
+    padding: 50px 50px;
+  }
+}
+.avantages__collectivity h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  .avantages__collectivity h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .avantages__collectivity h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .avantages__collectivity h2 {
+    font-size: 14px;
+  }
+}
+.avantages__collectivity .avantages__container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.avantages__collectivity .avantages__container .avantages__box {
+  width: 25%;
+  padding: 20px;
+}
+@media screen and (max-width: 999px) {
+  .avantages__collectivity .avantages__container .avantages__box {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 799px) {
+  .avantages__collectivity .avantages__container .avantages__box {
+    width: 100%;
+    text-align: center;
+  }
+}
+.avantages__collectivity .avantages__container .avantages__box h3 {
+  color: #323232;
+  text-transform: uppercase;
+}
+.avantages__collectivity .avantages__container .avantages__box .avantages__top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 799px) {
+  .avantages__collectivity .avantages__container .avantages__box .avantages__top {
+    justify-content: center;
+  }
+}
+.avantages__collectivity .avantages__container .avantages__box .avantages__top i {
+  color: #323232;
+  font-size: 25px;
+}
+
+.contact__collectivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.contact__collectivity h2 {
+  color: #3992ff;
+  margin-bottom: 30px;
+}
+.contact__collectivity h2 span {
+  position: relative;
+}
+.contact__collectivity h2 span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background: #94c356;
+}
+.contact__collectivity p {
+  margin: 20px 0;
+}
+
+.legalnotice h2 {
+  font-size: 25px;
+  color: #3992ff;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .legalnotice h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .legalnotice h2 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .legalnotice h2 {
+    font-size: 12px;
+  }
+}
+.legalnotice .container__base {
+  margin-bottom: 100px;
 }

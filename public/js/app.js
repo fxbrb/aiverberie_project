@@ -2074,9 +2074,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()("nav ul li a").filter(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('header .header__menu ul li a').filter(function () {
     return this.href === location.href;
-  }).addClass("active");
+  }).addClass('active');
   setTimeout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".alert").fadeOut(400);
   }, 3500);
@@ -2105,16 +2105,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css("display", "flex");
       }
     });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").addClass("opacity-0"); // $(".mission").addClass("opacity-0");
-
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").addClass("opacity-0");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("header").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").addClass("opacity-0");
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#directors__close").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".directors__modal").fadeOut();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0"); // $(".mission").removeClass("opacity-0");
-
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("header").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").removeClass("opacity-0");
@@ -2125,16 +2125,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css("display", "flex");
       }
     });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").addClass("opacity-0"); // $(".mission").addClass("opacity-0");
-
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").addClass("opacity-0");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("header").addClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").addClass("opacity-0");
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#permanents__close").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".permanents__modal").fadeOut();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0"); // $(".mission").removeClass("opacity-0");
-
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("header").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").removeClass("opacity-0");
@@ -2149,13 +2149,8 @@ leaflet__WEBPACK_IMPORTED_MODULE_1___default().tileLayer("https://api.mapbox.com
   id: "mapbox/streets-v11",
   tileSize: 512,
   zoomOffset: -1,
-  accessToken: "sk.eyJ1IjoiZnJhbmNvaXM5NiIsImEiOiJja3VudWlkc3YxcmEwMndvNmkzcGx6MzI0In0.PHR2xtHuG2Qo9XII1USGQw"
+  accessToken: "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA"
 }).addTo(mymap);
-(dropzone__WEBPACK_IMPORTED_MODULE_2___default().autoDiscover) = false;
-var myDropzone = new (dropzone__WEBPACK_IMPORTED_MODULE_2___default())("#attachment");
-myDropzone.on("addedfile", function (file) {
-  console.log("File added: ".concat(file.name));
-});
 
 /***/ }),
 

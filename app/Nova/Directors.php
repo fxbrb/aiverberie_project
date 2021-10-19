@@ -82,7 +82,7 @@ class Directors extends Resource
 
             Image::make('Photo', 'avatar')
                 ->rounded()
-                ->rules('nullable'),
+                ->rules('nullable', 'max:5000'),
         ];
     }
 

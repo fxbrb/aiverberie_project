@@ -36,6 +36,7 @@ class ContactAiMail extends Mailable
             'phone' => $this->contact['phone'],
             'object' => $this->contact['object'],
             'message' => $this->contact['message'],
-        ]);
+        ])->from($this->info['email'])
+        ->subject('Contact');
     }
 }

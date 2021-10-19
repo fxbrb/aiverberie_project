@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CollectivityServices;
 use App\Mail\ContactAiMail;
 use App\Mail\JobOfferRequest;
 use App\Mail\ParticularServices;
+use App\Mail\ProfessionalServices;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 use Cornford\Googlmapper\Models\Map;
 use Illuminate\Support\Facades\Mail;
@@ -136,6 +138,74 @@ class ContactController extends Controller
 
 
         Mail::to('contact@aiverberie.fr')->send(new ParticularServices($info));
+
+        return back()->with('success', 'Votre demande de service a été envoyé avec succès !');
+    }
+
+    public function professionalsView()
+    {
+        return view('professionals');
+    }
+
+    public function sendProfessionalsService(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => ['required', 'numeric', 'digits:10'],
+            'service' => ['required'],
+            'message' => ['required', 'string', 'max:255'],
+            'validation_form' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/professionnels')->withErrors($validator)->withInput();
+        }
+
+        $info = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'services' => $request['service'],
+            'message' => $request['message'],
+        ];
+
+
+        Mail::to('contact@aiverberie.fr')->send(new ProfessionalServices($info));
+
+        return back()->with('success', 'Votre demande de service a été envoyé avec succès !');
+    }
+
+    public function collectivityView()
+    {
+        return view('collectivity');
+    }
+
+    public function sendCollectivityService(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => ['required', 'numeric', 'digits:10'],
+            'service' => ['required'],
+            'message' => ['required', 'string', 'max:255'],
+            'validation_form' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/collectivité')->withErrors($validator)->withInput();
+        }
+
+        $info = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'services' => $request['service'],
+            'message' => $request['message'],
+        ];
+
+
+        Mail::to('contact@aiverberie.fr')->send(new CollectivityServices($info));
 
         return back()->with('success', 'Votre demande de service a été envoyé avec succès !');
     }

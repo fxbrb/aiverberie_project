@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ParticularServices extends Mailable
+class CollectivityServices extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -37,6 +37,6 @@ class ParticularServices extends Mailable
             'services' => $this->info['services'],
             'message' => $this->info['message'],
         ])->from($this->info['email'])
-        ->subject('Nouvelle demande de service particulier');
+        ->subject('Nouvelle demande de service de collectivité');
     }
 }

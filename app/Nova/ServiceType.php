@@ -32,7 +32,19 @@ class ServiceType extends Resource
         'id',
     ];
 
-        /**
+    /**
+     * Determine if the current user can create new resources.
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    public static function authorizedToCreate(Request $request)
+    {
+        return false;
+    }
+
+    /**
      * Determine if the current user can delete the given resource or throw an exception.
      *
      * @param Request $request
@@ -44,7 +56,7 @@ class ServiceType extends Resource
         return false;
     }
 
-        /**
+    /**
      * Get the displayable singular label of the resource.
      *
      * @return string
@@ -77,7 +89,7 @@ class ServiceType extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Nom ', 'name')
-            ->rules('required', 'max:255'),
+                ->rules('required', 'max:255'),
         ];
     }
 

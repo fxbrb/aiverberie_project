@@ -40,7 +40,8 @@ class JobOfferRequest extends Mailable
                 'jobs' => $this->info['jobs'],
                 'message' => $this->info['message'],
             ])
-            ->subject('Nouvelle demande d\'emploi');
+            ->subject('Nouvelle demande d\'emploi')
+            ->from($this->info['email']);
 
         for ($i = 0; $i < count($this->filename); $i++) {
             $email->attach($this->filename[$i]);

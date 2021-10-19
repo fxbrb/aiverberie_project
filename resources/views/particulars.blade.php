@@ -19,9 +19,9 @@
 
     <div class="container__base">
         <section class="services">
-            <h2 data-aos-duration="800" data-aos="fade-right" data-aos-delay="300">L’association intermédiaire vous propose une solution et sans engagement</h2>
-            <p data-aos-duration="800" data-aos="fade-left" data-aos-delay="400">Les services sont les suivant :</p>
-            <div class="services__card" data-aos-duration="800" data-aos="fade-right" data-aos-delay="500">
+            <h2 data-aos-duration="800" data-aos="fade-down" data-aos-delay="300">L’association intermédiaire vous propose une solution et sans engagement</h2>
+            <p data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">Les services sont les suivant :</p>
+            <div class="services__card" data-aos-duration="800" data-aos="fade-down" data-aos-delay="500">
                 @foreach(\App\Models\Services::where('service_types_id', '1')->get() as $service)
                 <div class="single__service">
                     <div class="services__header" style="background-image: url('{{ asset('storage/' . $service->image) }}');
@@ -94,39 +94,40 @@
     </section>
 
     <section class="impot">
-        <div class="left" data-aos-duration="800" data-aos="fade-right" data-aos-delay="300">
+        <div class="left" data-aos-duration="800" data-aos="fade-down" data-aos-delay="300">
             <img src="{{ asset('images/logocesu.png') }}" alt="Logo cesu">
         </div>
-        <div class="right" data-aos-duration="800" data-aos="fade-left" data-aos-delay="300">
+        <div class="right" data-aos-duration="800" data-aos="fade-up" data-aos-delay="300">
             <h2>Possibilité de crédit d'impôt</h2>
             <p>50% d'économie, sous réserves de ne pas dépasser le plafond fiscal</p>
         </div>
     </section>
-
-    <section class="contact__particulars" id="contact__particulars">
-        <form method="POST" action="{{route('particular.send')}}" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
-            <h2><span>Demande de services</span></h2>
+</div>
+<div class="container__base">
+    <section class="contact__particulars" id="contact__particulars" data-aos-duration="800" data-aos="fade-down" data-aos-delay="300">
+        <form method="POST" action="{{ route('particular.send') }}" enctype="multipart/form-data">
+            <h2 data-aos="fade-down" data-aos-duration="800" data-aos-delay="400"><span>Demande de services</span></h2>
             @csrf
-            <div class="input-box">
+            <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="500">
                 <input type="text" name="name" id="name" placeholder="Nom et Prénom">
             </div>
             @error('name')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="input-box">
+            <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
                 <input type="text" name="email" id="email" placeholder="Email">
             </div>
             @error('email')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="input-box">
+            <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="700">
                 <input type="text" name="phone" id="phone" placeholder="Téléphone">
             </div>
             @error('phone')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="select-box">
-                <select id="service" name="service[]" multiple>
+            <div class="select-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
+                <select id="service" name="service[]" multiple required>
                     <option disabled>Sélectionnez un service</option>
                     @foreach(\App\Models\Services::where('service_types_id', '1')->get() as $service)
                     <option value="{{ $service->name }}">
@@ -135,16 +136,13 @@
                     @endforeach
                 </select>
             </div>
-            @error('job')
-            <div class="error-message">{{ $message }}</div>
-            @enderror
-            <div class="input-box message-box">
+            <div class="input-box message-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
                 <textarea name="message" id="message" placeholder="Ecrivez votre message..."></textarea>
             </div>
             @error('message')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="input-validation">
+            <div class="input-validation" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
                 <input type="checkbox" name="validation_form" id="validation_form">
                 <label for="validation_form">En cochant cette case, vous acceptez que les informations
                     saisies dans ce formulaire soient utilisées dans le cadre de la demande
@@ -154,12 +152,11 @@
             @error('validation_form')
             <div class="error-message">{{ $message }}</div>
             @enderror
-            <div class="button">
+            <div class="button" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1100">
                 <input type="submit" class="submit-btn" value="Envoyer">
             </div>
         </form>
     </section>
-
 </div>
 @endsection
 
@@ -168,7 +165,8 @@
 <script>
     $(document).ready(function() {
         $("#service").select2({
-            placeholder: "Sélectionnez vos services"
+            placeholder: "Sélectionnez vos services",
+            maximumSelectionLength: 4
         });
 
     });

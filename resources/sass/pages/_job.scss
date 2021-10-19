@@ -110,7 +110,6 @@
 
     .contact__jobs {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 50px 0;
@@ -139,4 +138,100 @@
             margin: 20px 0;
         }
     }
+
+.why__job {
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3992ffd5;
+
+    @media screen and (max-width: 393px) {
+        padding: 50px 50px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: #ffffff;
+
+
+        @media screen and (max-width: 768px) {
+            font-size: 23px;
+        }
+
+        @media screen and (max-width: 425px) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 14px;
+        }
+    }
+
+    .why__container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 30px;
+
+        .why__box {
+            width: 25%;
+            padding: 20px;
+
+            @media screen and (max-width: 999px) {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 799px) {
+                width: 100%;
+                text-align: center;
+            }
+
+            h3 {
+                color: #323232;
+                text-transform: uppercase;
+            }
+
+            .why__top {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin-bottom: 20px;
+
+                @media screen and (max-width: 799px) {
+                    justify-content: center;
+                }
+
+                i {
+                    color: #323232;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .arrow{
+        color: #323232;
+        text-decoration: none;
+        animation: bounce 3s infinite;
+    }
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
 }
