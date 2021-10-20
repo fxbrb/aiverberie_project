@@ -54,7 +54,6 @@ header {
                     &:hover {
                         color: #94c356;
                     }
-
                 }
             }
         }
@@ -97,6 +96,14 @@ header {
                 @media screen and (max-width: 425px) {
                     font-size: 20px;
                 }
+
+                @media screen and (max-width: 375px) {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 320px) {
+                    font-size: 15px;
+                }
             }
 
             .btn-close::after {
@@ -112,6 +119,13 @@ header {
 
                 @media screen and (max-width: 425px) {
                     font-size: 20px;
+                }
+                @media screen and (max-width: 375px) {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 320px) {
+                    font-size: 15px;
                 }
             }
         }

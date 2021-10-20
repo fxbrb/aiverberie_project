@@ -1,8 +1,8 @@
-<div class="permanents__modal">
+<div class="members__modal permanents">
     <span id="permanents__close">
         <i class="fas fa-times"></i>
     </span>
-    <div id="permanents__team">
+    <div id="members__team">
         <h2>Liste des permanents</h2>
 
         <div class="container-card">
@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="content">
                     <div class="imgBx">
-                        <img src="{{ Storage::url($permanent->avatar) }}" alt="">
+                        <img src="{{ asset('storage/' . $permanent->avatar) }}" alt="Avatar de {{$permanent->lastname}} {{$permanent->firstname}}">
                     </div>
                     <div class="contentBx">
                         <h3>{{$permanent->lastname}} {{$permanent->firstname}}<br />

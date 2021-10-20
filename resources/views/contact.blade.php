@@ -6,11 +6,16 @@
 <div class="contact">
     <div id="mapid"></div>
 
-    @if(session('success'))
-    <div class="alert">
-        {{ session('success') }}
-    </div>
+    @if(\Session::has('success'))
+    <div class="success__alert">{{\Session::get('success')}}</div>
+    {{\Session::forget('success')}}
     @endif
+
+    @if(\Session::has('error'))
+    <div class="error__alert">{{\Session::get('error')}}</div>
+    {{\Session::forget('error')}}
+    @endif
+
 
     <div class="container__base">
         <div class="content__contact">
@@ -52,31 +57,31 @@
                         <input type="text" name="name" id="name" placeholder="Nom et Prénom">
                     </div>
                     @error('name')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
                         <input type="text" name="email" id="email" placeholder="Email">
                     </div>
                     @error('email')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="700">
                         <input type="text" name="phone" id="phone" placeholder="Téléphone">
                     </div>
                     @error('phone')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
                         <input type="text" name="object" id="object" placeholder="Objet">
                     </div>
                     @error('object')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="input-box message-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
                         <textarea name="message" id="message" placeholder="Ecrivez votre message..."></textarea>
                     </div>
                     @error('message')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="input-validation" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
                         <input type="checkbox" name="validation_form" id="validation_form">
@@ -86,7 +91,7 @@
                         </label>
                     </div>
                     @error('validation_form')
-                    <div class="error-message">{{ $message }}</div>
+                    <div class="input__error">{{ $message }}</div>
                     @enderror
                     <div class="button" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1100">
                         <input type="submit" class="submit-btn" value="Envoyer">

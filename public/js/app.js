@@ -2074,9 +2074,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('header .header__menu ul li a').filter(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()("header .header__menu ul li a").filter(function () {
     return this.href === location.href;
-  }).addClass('active');
+  }).addClass("active");
   setTimeout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".alert").fadeOut(400);
   }, 3500);
@@ -2087,20 +2087,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".overlay").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".overlay").fadeToggle(200);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".button a").toggleClass("btn-open").toggleClass("btn-close");
-  }); // $(".dropdown__services").click(function () {
-  //     if ($(this).parent(".particular__dropdown").hasClass("open")) {
-  //         $(this).parent(".particular__dropdown").removeClass("open");
-  //         $(this).siblings(".dropdown__description").slideUp(500);
-  //     } else {
-  //         $(".particular__dropdown").removeClass("open");
-  //         $(".particular__dropdown .dropdown__description").slideUp(500);
-  //         $(this).parent(".particular__dropdown").addClass("open");
-  //         $(this).siblings(".dropdown__description").slideDown(500);
-  //     }
-  // });
-
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#directors").click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".directors__modal").fadeIn({
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".directors").fadeIn({
       start: function start() {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css("display", "flex");
       }
@@ -2112,7 +2101,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").addClass("opacity-0");
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#directors__close").click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".directors__modal").fadeOut();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".directors").fadeOut();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").removeClass("opacity-0");
@@ -2120,7 +2109,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").removeClass("opacity-0");
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#permanents").click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".permanents__modal").fadeIn({
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".permanents").fadeIn({
       start: function start() {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).css("display", "flex");
       }
@@ -2132,7 +2121,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("footer").addClass("opacity-0");
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()("#permanents__close").click(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".permanents__modal").fadeOut();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".permanents").fadeOut();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".historical").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".mission").removeClass("opacity-0");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".territory").removeClass("opacity-0");
@@ -2151,6 +2140,20 @@ leaflet__WEBPACK_IMPORTED_MODULE_1___default().tileLayer("https://api.mapbox.com
   zoomOffset: -1,
   accessToken: "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA"
 }).addTo(mymap);
+(dropzone__WEBPACK_IMPORTED_MODULE_2___default().options.myDropzone) = {
+  // camelized version of the `id`
+  paramName: "attachment[]",
+  // The name that will be used to transfer the file
+  maxFilesize: 2,
+  // MB
+  accept: function accept(file, done) {
+    if (file.name == "justinbieber.jpg") {
+      done("Naha, you don't.");
+    } else {
+      done();
+    }
+  }
+};
 
 /***/ }),
 

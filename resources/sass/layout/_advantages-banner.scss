@@ -1,0 +1,42 @@
+.avantages__container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .avantages__box {
+        width: 25%;
+        padding: 20px;
+
+        @media screen and (max-width: 999px) {
+            width: 40%;
+        }
+
+        @media screen and (max-width: 799px) {
+            width: 100%;
+            text-align: center;
+        }
+
+        h3 {
+            color: #323232;
+            text-transform: uppercase;
+        }
+
+        .avantages__top {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+
+            @media screen and (max-width: 799px) {
+                justify-content: center;
+            }
+
+            i {
+                color: #323232;
+                font-size: 25px;
+            }
+        }
+    }
+}

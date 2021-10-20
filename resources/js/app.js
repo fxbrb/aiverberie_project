@@ -4,11 +4,11 @@ import L from "leaflet";
 import Dropzone from "dropzone";
 
 $(document).ready(function () {
-
-
-    $('header .header__menu ul li a').filter(function(){
-        return this.href === location.href;
-      }).addClass('active');
+    $("header .header__menu ul li a")
+        .filter(function () {
+            return this.href === location.href;
+        })
+        .addClass("active");
 
     setTimeout(function () {
         $(".alert").fadeOut(400);
@@ -24,20 +24,8 @@ $(document).ready(function () {
         $(".button a").toggleClass("btn-open").toggleClass("btn-close");
     });
 
-    // $(".dropdown__services").click(function () {
-    //     if ($(this).parent(".particular__dropdown").hasClass("open")) {
-    //         $(this).parent(".particular__dropdown").removeClass("open");
-    //         $(this).siblings(".dropdown__description").slideUp(500);
-    //     } else {
-    //         $(".particular__dropdown").removeClass("open");
-    //         $(".particular__dropdown .dropdown__description").slideUp(500);
-    //         $(this).parent(".particular__dropdown").addClass("open");
-    //         $(this).siblings(".dropdown__description").slideDown(500);
-    //     }
-    // });
-
     $("#directors").click(function () {
-        $(".directors__modal").fadeIn({
+        $(".directors").fadeIn({
             start: function () {
                 $(this).css("display", "flex");
             },
@@ -50,7 +38,7 @@ $(document).ready(function () {
     });
 
     $("#directors__close").click(function () {
-        $(".directors__modal").fadeOut();
+        $(".directors").fadeOut();
         $(".historical").removeClass("opacity-0");
         $(".mission").removeClass("opacity-0");
         $(".territory").removeClass("opacity-0");
@@ -59,7 +47,7 @@ $(document).ready(function () {
     });
 
     $("#permanents").click(function () {
-        $(".permanents__modal").fadeIn({
+        $(".permanents").fadeIn({
             start: function () {
                 $(this).css("display", "flex");
             },
@@ -72,14 +60,13 @@ $(document).ready(function () {
     });
 
     $("#permanents__close").click(function () {
-        $(".permanents__modal").fadeOut();
+        $(".permanents").fadeOut();
         $(".historical").removeClass("opacity-0");
         $(".mission").removeClass("opacity-0");
         $(".territory").removeClass("opacity-0");
         $("header").removeClass("opacity-0");
         $("footer").removeClass("opacity-0");
     });
-
 });
 
 var mymap = L.map("mapid").setView([49.3072731, 2.7214514], 15);
@@ -104,4 +91,16 @@ L.tileLayer(
             "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA",
     }
 ).addTo(mymap);
+
+  Dropzone.options.myDropzone = { // camelized version of the `id`
+    paramName: "attachment[]", // The name that will be used to transfer the file
+    maxFilesize: 2, // MB
+    accept: function(file, done) {
+      if (file.name == "justinbieber.jpg") {
+        done("Naha, you don't.");
+      }
+      else { done(); }
+    }
+  };
+
 

@@ -9,24 +9,24 @@
     </div>
 
     @if(\Session::has('success'))
-    <div class="alert">{{\Session::get('success')}}</div>
+    <div class="success__alert">{{\Session::get('success')}}</div>
     {{\Session::forget('success')}}
     @endif
 
     @if(\Session::has('error'))
-    <div class="alert">{{\Session::get('error')}}</div>
+    <div class="error__alert">{{\Session::get('error')}}</div>
     {{\Session::forget('errors')}}
     @endif
 
     <div class="container__base">
         <section class="services">
-            <h2 data-aos-duration="800" data-aos="fade-down" data-aos-delay="300">L’association intermédiaire vous propose une solution et sans engagement</h2>
-            <p data-aos-duration="800" data-aos="fade-up" data-aos-delay="400">Les services sont les suivant :</p>
-            <div class="services__card" data-aos-duration="800" data-aos="fade-down" data-aos-delay="500">
+            <h2>L’association intermédiaire vous propose une solution et sans engagement</h2>
+            <p>Les services sont les suivant :</p>
+            <div class="services__card">
                 @foreach(\App\Models\Services::where('service_types_id', '2')->get() as $service)
                 <div class="single__service">
                     <div class="services__header" style="background-image: url('{{ asset('storage/' . $service->image) }}');
-            background-size: cover; background-position: center; background-repeat: no-repeat;">
+            background-size: cover; background-position: center; background-repeat: no-repeat;" title="Image {{$service->name}}">
                         <h2>{{$service->name}}</h2>
                     </div>
                     <div class="services__text">
@@ -104,22 +104,22 @@
                 <input type="text" name="name" id="name" placeholder="Nom et Prénom">
             </div>
             @error('name')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
                 <input type="text" name="email" id="email" placeholder="Email">
             </div>
             @error('email')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="700">
                 <input type="text" name="phone" id="phone" placeholder="Téléphone">
             </div>
             @error('phone')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="select-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
-                <select id="service" name="service[]" multiple required>
+                <select id="service" name="service[]" multiple>
                     <option disabled>Sélectionnez un service</option>
                     @foreach(\App\Models\Services::where('service_types_id', '2')->get() as $service)
                     <option value="{{ $service->name }}">
@@ -128,11 +128,14 @@
                     @endforeach
                 </select>
             </div>
+            @error('service')
+            <div class="input__error">{{ $message }}</div>
+            @enderror
             <div class="input-box message-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
                 <textarea name="message" id="message" placeholder="Ecrivez votre message..."></textarea>
             </div>
             @error('message')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-validation" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
                 <input type="checkbox" name="validation_form" id="validation_form">
@@ -142,7 +145,7 @@
                 </label>
             </div>
             @error('validation_form')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="button" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1100">
                 <input type="submit" class="submit-btn" value="Envoyer">

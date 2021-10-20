@@ -8,12 +8,12 @@
     </div>
 
     @if(\Session::has('success'))
-    <div class="alert">{{\Session::get('success')}}</div>
+    <div class="success__alert">{{\Session::get('success')}}</div>
     {{\Session::forget('success')}}
     @endif
 
     @if(\Session::has('error'))
-    <div class="alert">{{\Session::get('error')}}</div>
+    <div class="error__alert">{{\Session::get('error')}}</div>
     {{\Session::forget('errors')}}
     @endif
 
@@ -80,7 +80,7 @@
     </section>
 
     <section class="contact__jobs" id="contact__jobs">
-        <form method="POST" action="{{route('job.send')}}" id="my-dropzone" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
+        <form method="POST" action="{{route('job.send')}}" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
             <h2 data-aos="fade-down" data-aos-duration="800" data-aos-delay="400"><span>Demande d'offre d'emploi</span></h2>
             <p></p>
             @csrf
@@ -88,19 +88,19 @@
                 <input type="text" name="name" id="name" placeholder="Nom et Prénom">
             </div>
             @error('name')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="600">
                 <input type="text" name="email" id="email" placeholder="Email">
             </div>
             @error('email')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="700">
                 <input type="text" name="phone" id="phone" placeholder="Téléphone">
             </div>
             @error('phone')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="select-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="800">
                 <select id="job" name="job[]" multiple>
@@ -113,22 +113,22 @@
                 </select>
             </div>
             @error('job')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
-            <!-- <div class="file-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
+            <div class="file-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
                 <label>Votre CV & Lettre de motivation</label>
                 <input type="file" id="attachment" name="attachment[]" multiple>
-            </div> -->
 
-
+                <!-- <input type="file" name="attachment[]"/> -->
+            </div>
             @error('attachment')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-box message-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1000">
                 <textarea name="message" id="message" placeholder="Ecrivez votre message..."></textarea>
             </div>
             @error('message')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="input-validation" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1100">
                 <input type="checkbox" name="validation_form" id="validation_form">
@@ -138,7 +138,7 @@
                 </label>
             </div>
             @error('validation_form')
-            <div class="error-message">{{ $message }}</div>
+            <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="button" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
                 <input type="submit" class="submit-btn" value="Envoyer">
@@ -155,7 +155,9 @@
 <script>
     $(document).ready(function() {
         $("#job").select2({
-            placeholder: "Sélectionnez vos offres"
+            placeholder: "Sélectionnez vos offres",
+            maximumSelectionLength: 4,
+            allowClear: true,
         });
 
     });

@@ -40,7 +40,8 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('contact')->withErrors($validator)->withInput();
+            return redirect('contact')->withErrors($validator)->withInput()
+            ->with('error', 'Un problème est survenu lors de l\'envoie de votre message');
         }
 
         $contact = [
@@ -74,7 +75,8 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/offres-emploi')->withErrors($validator)->withInput();
+            return redirect('/offres-emploi')->withErrors($validator)->withInput()
+            ->with('error', 'Un problème est survenu lors de l\'envoie de votre demande');
         }
 
         $files = [];
@@ -125,7 +127,8 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/particulier')->withErrors($validator)->withInput();
+            return redirect('/particulier')->withErrors($validator)->withInput()
+            ->with('error', 'Un problème est survenu lors de l\'envoie de votre demande');
         }
 
         $info = [
@@ -159,7 +162,8 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/professionnels')->withErrors($validator)->withInput();
+            return redirect('/professionnels')->withErrors($validator)->withInput()
+            ->with('error', 'Un problème est survenu lors de l\'envoie de votre demande');
         }
 
         $info = [
@@ -193,7 +197,8 @@ class ContactController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/collectivité')->withErrors($validator)->withInput();
+            return redirect('/collectivité')->withErrors($validator)->withInput()
+            ->with('error', 'Un problème est survenu lors de l\'envoie de votre demande');
         }
 
         $info = [

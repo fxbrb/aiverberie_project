@@ -1,0 +1,113 @@
+section.jobs {
+    padding: 50px 0;
+
+    h2 {
+        font-size: 25px;
+        color: #3992ff;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 23px;
+        }
+
+        @media screen and (max-width: 425px) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 17px;
+        }
+    }
+
+    .jobs__list {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .job {
+            width: 20%;
+            padding: 20px;
+            box-shadow: 0px 0px 15px #dfdfdf;
+            border-radius: 5px;
+            background: #fff;
+            transition: all 300ms;
+
+            @media screen and (max-width: 1334px) {
+                width: 27%;
+            }
+
+            @media screen and (max-width: 1052px) {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 624px) {
+                width: 100%;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            h3 {
+                color: #3992ff;
+                margin-bottom: 20px;
+            }
+
+            p {
+                line-height: 25px;
+                margin-bottom: 30px;
+                height: 150px;
+            }
+
+            .job__infos {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                > div {
+                    display: flex;
+                    gap: 20px;
+
+                    @media screen and (max-width: 1405px) {
+                        gap: 10px;
+                    }
+
+                    span {
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 300;
+                        font-size: 12px;
+
+                        i {
+                            color: #3992ff;
+                        }
+                    }
+                }
+
+                a {
+                    border: 1px solid #3992ff;
+                    color: #fff;
+                    padding: 10px 10px;
+                    border-radius: 5px;
+                    background: #3992ff;
+                    font-size: 15px;
+                    transition: all 300ms;
+
+                    @media screen and (max-width: 425px) {
+                        font-size: 12px;
+                    }
+
+                    @media screen and (max-width: 320px) {
+                        font-size: 10px;
+                    }
+
+                    &:hover {
+                        background: #fff;
+                        color: #3992ff;
+                    }
+                }
+            }
+        }
+    }
+}

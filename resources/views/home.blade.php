@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="home">
-    <div class="slide">
+    <div class="slide" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300">
         <img src="https://via.placeholder.com/1920x500" alt="" style="width: 100%;">
     </div>
 
@@ -24,7 +24,8 @@
         </section>
 
         <section class="about">
-            <img data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" src="https://via.placeholder.com/500x300" alt="">
+            <div class="about__img img" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"></div>
+            <!-- <img data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300" src="{{ asset('./images/team.jpeg') }}" alt=""> -->
             <div class="about__content" data-aos="zoom-out" data-aos-duration="500" data-aos-delay="300">
                 <h2>Qui sommes nous ?</h2>
                 <p>L'association intermédiaire est une association Loi 1901 sans but lucratif. Elle est administrée par un conseil d'administration élu lors de l'assemblée générale.

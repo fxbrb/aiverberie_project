@@ -7241,6 +7241,16 @@ header .header__menu .button .btn-open::after {
     font-size: 20px;
   }
 }
+@media screen and (max-width: 375px) {
+  header .header__menu .button .btn-open::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 320px) {
+  header .header__menu .button .btn-open::after {
+    font-size: 15px;
+  }
+}
 header .header__menu .button .btn-close::after {
   color: #ffffff;
   content: "\f00d";
@@ -7256,6 +7266,16 @@ header .header__menu .button .btn-close::after {
 @media screen and (max-width: 425px) {
   header .header__menu .button .btn-close::after {
     font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  header .header__menu .button .btn-close::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 320px) {
+  header .header__menu .button .btn-close::after {
+    font-size: 15px;
   }
 }
 
@@ -7591,7 +7611,7 @@ form {
 }
 form .input-box {
   width: 100%;
-  padding-bottom: 20px;
+  margin: 20px 0;
 }
 form .input-box input,
 form .input-box textarea {
@@ -7697,11 +7717,6 @@ form .input-validation input[type=checkbox]:checked + label:before {
   border-top-color: transparent;
   border-left-color: transparent;
   transform: rotate(45deg);
-}
-form .error-message {
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  color: red;
 }
 form .message-box {
   min-height: 110px;
@@ -7824,7 +7839,7 @@ form .button .submit-btn:hover {
 }
 form .select-box {
   width: 100%;
-  padding-bottom: 20px;
+  margin: 20px 0;
 }
 @media screen and (max-width: 425px) {
   form .select-box {
@@ -7862,6 +7877,455 @@ form .select-box select {
 @media screen and (max-width: 375px) {
   form .select-box select {
     font-size: 10px;
+  }
+}
+
+.services__card {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+.services__card .single__service {
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 15px #dfdfdf;
+  width: 30%;
+  transition: all 300ms;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.services__card .single__service:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 999px) {
+  .services__card .single__service {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 630px) {
+  .services__card .single__service {
+    width: 100%;
+  }
+}
+.services__card .single__service .services__header {
+  height: 200px;
+  position: relative;
+}
+.services__card .single__service .services__header h2 {
+  width: 70%;
+  color: #ffffff;
+  background: #3992ff;
+  border: 1px solid #3992ff;
+  text-align: center;
+  padding: 15px 0;
+  position: absolute;
+  cursor: default;
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin: 0;
+  border-radius: 50px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.services__card .single__service .services__header h2:hover {
+  background: #fff;
+  color: #3992ff;
+}
+.services__card .single__service .services__text {
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.avantages__container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.avantages__container .avantages__box {
+  width: 25%;
+  padding: 20px;
+}
+@media screen and (max-width: 999px) {
+  .avantages__container .avantages__box {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 799px) {
+  .avantages__container .avantages__box {
+    width: 100%;
+    text-align: center;
+  }
+}
+.avantages__container .avantages__box h3 {
+  color: #323232;
+  text-transform: uppercase;
+}
+.avantages__container .avantages__box .avantages__top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 799px) {
+  .avantages__container .avantages__box .avantages__top {
+    justify-content: center;
+  }
+}
+.avantages__container .avantages__box .avantages__top i {
+  color: #323232;
+  font-size: 25px;
+}
+
+section.jobs {
+  padding: 50px 0;
+}
+section.jobs h2 {
+  font-size: 25px;
+  color: #3992ff;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  section.jobs h2 {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  section.jobs h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  section.jobs h2 {
+    font-size: 17px;
+  }
+}
+section.jobs .jobs__list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+section.jobs .jobs__list .job {
+  width: 20%;
+  padding: 20px;
+  box-shadow: 0px 0px 15px #dfdfdf;
+  border-radius: 5px;
+  background: #fff;
+  transition: all 300ms;
+}
+@media screen and (max-width: 1334px) {
+  section.jobs .jobs__list .job {
+    width: 27%;
+  }
+}
+@media screen and (max-width: 1052px) {
+  section.jobs .jobs__list .job {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 624px) {
+  section.jobs .jobs__list .job {
+    width: 100%;
+  }
+}
+section.jobs .jobs__list .job:hover {
+  transform: scale(1.1);
+}
+section.jobs .jobs__list .job h3 {
+  color: #3992ff;
+  margin-bottom: 20px;
+}
+section.jobs .jobs__list .job p {
+  line-height: 25px;
+  margin-bottom: 30px;
+  height: 150px;
+}
+section.jobs .jobs__list .job .job__infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.jobs .jobs__list .job .job__infos > div {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 1405px) {
+  section.jobs .jobs__list .job .job__infos > div {
+    gap: 10px;
+  }
+}
+section.jobs .jobs__list .job .job__infos > div span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
+section.jobs .jobs__list .job .job__infos > div span i {
+  color: #3992ff;
+}
+section.jobs .jobs__list .job .job__infos a {
+  border: 1px solid #3992ff;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background: #3992ff;
+  font-size: 15px;
+  transition: all 300ms;
+}
+@media screen and (max-width: 425px) {
+  section.jobs .jobs__list .job .job__infos a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  section.jobs .jobs__list .job .job__infos a {
+    font-size: 10px;
+  }
+}
+section.jobs .jobs__list .job .job__infos a:hover {
+  background: #fff;
+  color: #3992ff;
+}
+
+.error__alert {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: red;
+}
+@media screen and (max-width: 768px) {
+  .error__alert {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .error__alert {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .error__alert {
+    font-size: 10px;
+  }
+}
+
+.success__alert {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: green;
+}
+@media screen and (max-width: 768px) {
+  .success__alert {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .success__alert {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .success__alert {
+    font-size: 10px;
+  }
+}
+
+.input__error {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: red;
+}
+@media screen and (max-width: 768px) {
+  .input__error {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .input__error {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .input__error {
+    font-size: 7px;
+  }
+}
+
+.members__modal {
+  background-color: white;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #3992ff;
+  border-radius: 6px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  overflow: auto;
+  height: 500px;
+  z-index: 1;
+}
+.members__modal > div {
+  display: none;
+  flex-direction: column;
+}
+.members__modal #permanents__close, .members__modal #directors__close {
+  color: #323232;
+  text-align: right;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+@media screen and (max-width: 1024px) {
+  .members__modal #permanents__close, .members__modal #directors__close {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .members__modal #permanents__close, .members__modal #directors__close {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .members__modal #permanents__close, .members__modal #directors__close {
+    font-size: 13px;
+  }
+}
+.members__modal #members__team {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.members__modal #members__team h2 {
+  text-align: center;
+}
+.members__modal .container-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+@media screen and (max-width: 425px) {
+  .members__modal .container-card {
+    margin: 10px 0;
+  }
+}
+.members__modal .container-card .card {
+  position: relative;
+  background: #69a8f5de;
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 50px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 425px) {
+  .members__modal .container-card .card {
+    padding: 40px 40px;
+    width: 100%;
+  }
+}
+.members__modal .container-card .card:hover .content {
+  transform: translateY(-20px);
+}
+.members__modal .container-card .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+}
+.members__modal .container-card .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 425px) {
+  .members__modal .container-card .card .content .imgBx {
+    width: 120px;
+    height: 120px;
+  }
+}
+.members__modal .container-card .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.members__modal .container-card .card .content .contentBx h3 {
+  color: black;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+@media screen and (max-width: 768px) {
+  .members__modal .container-card .card .content .contentBx h3 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .members__modal .container-card .card .content .contentBx h3 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .members__modal .container-card .card .content .contentBx h3 {
+    font-size: 12px;
+  }
+}
+.members__modal .container-card .card .content .contentBx h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+@media screen and (max-width: 768px) {
+  .members__modal .container-card .card .content .contentBx h3 span {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .members__modal .container-card .card .content .contentBx h3 span {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .members__modal .container-card .card .content .contentBx h3 span {
+    font-size: 8px;
   }
 }
 
@@ -7957,32 +8421,52 @@ form .select-box select {
 }
 .home section.about {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 50px 0;
 }
-@media screen and (max-width: 1159px) {
+@media screen and (max-width: 1249px) {
   .home section.about {
     flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 }
-.home section.about img {
+.home section.about .about__img {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   box-shadow: 10px 10px 15px #dfdfdf;
-  width: 100%;
+}
+@media screen and (max-width: 650px) {
+  .home section.about .about__img {
+    width: 100%;
+  }
+}
+.home section.about .about__img.img {
+  background: url(/images/team.jpeg?0ea24eb06de75ffb784926aa251021e6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(120%);
 }
 .home section.about .about__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
+  width: 50%;
+}
+@media screen and (max-width: 1249px) {
+  .home section.about .about__content {
+    width: 100%;
+  }
 }
 .home section.about .about__content h2 {
   font-size: 25px;
   color: #3992ff;
   margin-bottom: 30px;
 }
-@media screen and (max-width: 1159px) {
+@media screen and (max-width: 1249px) {
   .home section.about .about__content h2 {
     text-align: center;
   }
@@ -8015,6 +8499,11 @@ form .select-box select {
   font-size: 15px;
   transition: all 300ms;
 }
+@media screen and (max-width: 1249px) {
+  .home section.about .about__content a {
+    text-align: center;
+  }
+}
 @media screen and (max-width: 425px) {
   .home section.about .about__content a {
     font-size: 12px;
@@ -8026,116 +8515,6 @@ form .select-box select {
   }
 }
 .home section.about .about__content a:hover {
-  background: #fff;
-  color: #3992ff;
-}
-.home section.jobs {
-  padding: 50px 0;
-}
-.home section.jobs h2 {
-  font-size: 25px;
-  color: #3992ff;
-  margin-bottom: 30px;
-}
-@media screen and (max-width: 768px) {
-  .home section.jobs h2 {
-    font-size: 23px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .home section.jobs h2 {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 375px) {
-  .home section.jobs h2 {
-    font-size: 17px;
-  }
-}
-.home section.jobs .jobs__list {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.home section.jobs .jobs__list .job {
-  width: 20%;
-  padding: 20px;
-  box-shadow: 0px 0px 15px #dfdfdf;
-  border-radius: 5px;
-  background: #fff;
-  transition: all 300ms;
-}
-@media screen and (max-width: 1334px) {
-  .home section.jobs .jobs__list .job {
-    width: 27%;
-  }
-}
-@media screen and (max-width: 1052px) {
-  .home section.jobs .jobs__list .job {
-    width: 40%;
-  }
-}
-@media screen and (max-width: 624px) {
-  .home section.jobs .jobs__list .job {
-    width: 100%;
-  }
-}
-.home section.jobs .jobs__list .job:hover {
-  transform: scale(1.1);
-}
-.home section.jobs .jobs__list .job h3 {
-  color: #3992ff;
-  margin-bottom: 20px;
-}
-.home section.jobs .jobs__list .job p {
-  line-height: 25px;
-  margin-bottom: 30px;
-  height: 150px;
-}
-.home section.jobs .jobs__list .job .job__infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.home section.jobs .jobs__list .job .job__infos > div {
-  display: flex;
-  gap: 20px;
-}
-@media screen and (max-width: 1405px) {
-  .home section.jobs .jobs__list .job .job__infos > div {
-    gap: 10px;
-  }
-}
-.home section.jobs .jobs__list .job .job__infos > div span {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-}
-.home section.jobs .jobs__list .job .job__infos > div span i {
-  color: #3992ff;
-}
-.home section.jobs .jobs__list .job .job__infos a {
-  border: 1px solid #3992ff;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 5px;
-  background: #3992ff;
-  font-size: 15px;
-  transition: all 300ms;
-}
-@media screen and (max-width: 425px) {
-  .home section.jobs .jobs__list .job .job__infos a {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .home section.jobs .jobs__list .job .job__infos a {
-    font-size: 10px;
-  }
-}
-.home section.jobs .jobs__list .job .job__infos a:hover {
   background: #fff;
   color: #3992ff;
 }
@@ -8225,16 +8604,6 @@ form .select-box select {
   height: 375px;
 }
 
-.alert {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  margin-top: 20px;
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-  color: green;
-}
-
 .particular .services {
   padding: 50px 0;
 }
@@ -8262,62 +8631,6 @@ form .select-box select {
   .particular .services h2 {
     font-size: 17px;
   }
-}
-.particular .services .services__card {
-  padding: 50px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-}
-.particular .services .services__card .single__service {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 0px 15px #dfdfdf;
-  width: 30%;
-  transition: all 300ms;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.particular .services .services__card .single__service:hover {
-  transform: scale(1.1);
-}
-@media screen and (max-width: 999px) {
-  .particular .services .services__card .single__service {
-    width: 45%;
-  }
-}
-@media screen and (max-width: 630px) {
-  .particular .services .services__card .single__service {
-    width: 100%;
-  }
-}
-.particular .services .services__card .single__service .services__header {
-  height: 200px;
-  position: relative;
-}
-.particular .services .services__card .single__service .services__header h2 {
-  color: #ffffff;
-  background: #3992ff;
-  border: 1px solid #3992ff;
-  text-align: center;
-  padding: 15px;
-  position: absolute;
-  cursor: pointer;
-  letter-spacing: 2px;
-  font-size: 18px;
-  margin: 0;
-  border-radius: 50px;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.particular .services .services__card .single__service .services__header h2:hover {
-  background: #fff;
-  color: #3992ff;
-}
-.particular .services .services__card .single__service .services__text {
-  padding: 40px 30px;
 }
 
 .contact__particulars {
@@ -8380,47 +8693,6 @@ form .select-box select {
   .avantages h2 {
     font-size: 14px;
   }
-}
-.avantages .avantages__container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.avantages .avantages__container .avantages__box {
-  width: 25%;
-  padding: 20px;
-}
-@media screen and (max-width: 999px) {
-  .avantages .avantages__container .avantages__box {
-    width: 40%;
-  }
-}
-@media screen and (max-width: 799px) {
-  .avantages .avantages__container .avantages__box {
-    width: 100%;
-    text-align: center;
-  }
-}
-.avantages .avantages__container .avantages__box h3 {
-  color: #323232;
-  text-transform: uppercase;
-}
-.avantages .avantages__container .avantages__box .avantages__top {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 799px) {
-  .avantages .avantages__container .avantages__box .avantages__top {
-    justify-content: center;
-  }
-}
-.avantages .avantages__container .avantages__box .avantages__top i {
-  color: #323232;
-  font-size: 25px;
 }
 
 .impot {
@@ -8573,224 +8845,6 @@ form .select-box select {
   background: #fff;
   color: #0082be;
 }
-.structure .directors__modal {
-  background-color: white;
-  margin: 0 auto;
-  padding: 40px;
-  border: 1px solid #3992ff;
-  border-radius: 6px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  overflow: auto;
-  height: 500px;
-  z-index: 1;
-}
-.structure .directors__modal > div {
-  display: none;
-  flex-direction: column;
-}
-.structure .directors__modal #directors__close {
-  color: #323232;
-  text-align: right;
-  font-size: 28px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
-}
-@media screen and (max-width: 1024px) {
-  .structure .directors__modal #directors__close {
-    font-size: 23px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .structure .directors__modal #directors__close {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .structure .directors__modal #directors__close {
-    font-size: 13px;
-  }
-}
-.structure .directors__modal #directors__team {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.structure .directors__modal #directors__team h2 {
-  text-align: center;
-}
-.structure .permanents__modal {
-  background-color: white;
-  margin: 0 auto;
-  padding: 40px;
-  border: 1px solid #3992ff;
-  border-radius: 6px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  display: none;
-  position: absolute;
-  overflow: auto;
-  height: 500px;
-  z-index: 1;
-}
-.structure .permanents__modal > div {
-  display: none;
-  flex-direction: column;
-}
-.structure .permanents__modal #permanents__close {
-  color: #323232;
-  text-align: right;
-  font-size: 28px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
-}
-@media screen and (max-width: 1024px) {
-  .structure .permanents__modal #permanents__close {
-    font-size: 23px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .structure .permanents__modal #permanents__close {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .structure .permanents__modal #permanents__close {
-    font-size: 13px;
-  }
-}
-.structure .permanents__modal #permanents__team {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.structure .permanents__modal #permanents__team h2 {
-  text-align: center;
-}
-.structure .container-card {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 40px 0;
-}
-@media screen and (max-width: 425px) {
-  .structure .container-card {
-    margin: 10px 0;
-  }
-}
-.structure .container-card .card {
-  position: relative;
-  background: #69a8f5de;
-  margin: 20px;
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 50px 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-@media screen and (max-width: 425px) {
-  .structure .container-card .card {
-    padding: 40px 40px;
-    width: 100%;
-  }
-}
-.structure .container-card .card:hover .content {
-  transform: translateY(-20px);
-}
-.structure .container-card .card .content {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transition: 0.5s;
-}
-.structure .container-card .card .content .imgBx {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 10px solid rgba(255, 255, 255, 0.5);
-}
-@media screen and (max-width: 425px) {
-  .structure .container-card .card .content .imgBx {
-    width: 120px;
-    height: 120px;
-  }
-}
-.structure .container-card .card .content .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.structure .container-card .card .content .contentBx h3 {
-  color: black;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-  margin: 20px 0 10px;
-  line-height: 1.1em;
-}
-@media screen and (max-width: 768px) {
-  .structure .container-card .card .content .contentBx h3 {
-    font-size: 15px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .structure .container-card .card .content .contentBx h3 {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .structure .container-card .card .content .contentBx h3 {
-    font-size: 12px;
-  }
-}
-.structure .container-card .card .content .contentBx h3 span {
-  font-size: 12px;
-  font-weight: 300;
-  text-transform: initial;
-}
-@media screen and (max-width: 768px) {
-  .structure .container-card .card .content .contentBx h3 span {
-    font-size: 10px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .structure .container-card .card .content .contentBx h3 span {
-    font-size: 9px;
-  }
-}
-@media screen and (max-width: 375px) {
-  .structure .container-card .card .content .contentBx h3 span {
-    font-size: 8px;
-  }
-}
 
 .mission {
   display: flex;
@@ -8798,31 +8852,41 @@ form .select-box select {
   flex-wrap: wrap;
   padding: 50px 0;
 }
-@media screen and (max-width: 1041px) {
+@media screen and (max-width: 1249px) {
   .mission {
-    justify-content: center;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 }
 .mission .left__mission {
+  width: 500px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   box-shadow: 10px 10px 15px #dfdfdf;
 }
-.mission .left__mission img {
-  border-radius: 5px;
-  box-shadow: 10px 10px 15px #dfdfdf;
-  width: 100%;
+@media screen and (max-width: 650px) {
+  .mission .left__mission {
+    width: 100%;
+  }
+}
+.mission .left__mission.img {
+  background: url(/images/clock.jpeg?5b9ebf0600c570fdc31e767735a7450f);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(120%);
 }
 .mission .right__mission {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-@media screen and (max-width: 1041px) {
+@media screen and (max-width: 1249px) {
   .mission .right__mission {
     width: 100%;
     text-align: center;
@@ -8941,104 +9005,11 @@ form .select-box select {
   font-family: "Poppins", sans-serif;
 }
 
-.jobOffers section.jobs {
-  padding: 50px 0;
-}
-.jobOffers section.jobs h2 {
-  font-size: 25px;
-  color: #3992ff;
-  margin-bottom: 30px;
-}
-@media screen and (max-width: 768px) {
-  .jobOffers section.jobs h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .jobOffers section.jobs h2 {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .jobOffers section.jobs h2 {
-    font-size: 12px;
-  }
-}
-.jobOffers section.jobs .jobs__list {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.jobOffers section.jobs .jobs__list .job {
+.jobOffers section.jobs .job {
   width: 100%;
-  padding: 20px;
-  box-shadow: 0px 0px 15px #dfdfdf;
-  border-radius: 5px;
-  background: #fff;
-  transition: all 300ms;
 }
-.jobOffers section.jobs .jobs__list .job:hover {
-  transform: scale(1.1);
-}
-.jobOffers section.jobs .jobs__list .job h3 {
-  color: #3992ff;
-  margin-bottom: 20px;
-}
-.jobOffers section.jobs .jobs__list .job p {
-  line-height: 25px;
-  margin-bottom: 30px;
-}
-.jobOffers section.jobs .jobs__list .job .job__infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.jobOffers section.jobs .jobs__list .job .job__infos > div {
-  display: flex;
-  gap: 20px;
-}
-@media screen and (max-width: 1405px) {
-  .jobOffers section.jobs .jobs__list .job .job__infos > div {
-    gap: 10px;
-  }
-}
-.jobOffers section.jobs .jobs__list .job .job__infos > div span {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-}
-.jobOffers section.jobs .jobs__list .job .job__infos > div span i {
-  color: #3992ff;
-}
-.jobOffers section.jobs .jobs__list .job .job__infos a {
-  border: 1px solid #3992ff;
-  color: #fff;
-  padding: 10px 10px;
-  border-radius: 5px;
-  background: #3992ff;
-  font-size: 15px;
-  transition: all 300ms;
-}
-@media screen and (max-width: 768px) {
-  .jobOffers section.jobs .jobs__list .job .job__infos a {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .jobOffers section.jobs .jobs__list .job .job__infos a {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 375px) {
-  .jobOffers section.jobs .jobs__list .job .job__infos a {
-    font-size: 10px;
-  }
-}
-.jobOffers section.jobs .jobs__list .job .job__infos a:hover {
-  background: #fff;
-  color: #3992ff;
+.jobOffers section.jobs .job p {
+  height: auto;
 }
 .jobOffers .contact__jobs {
   display: flex;
@@ -9199,62 +9170,6 @@ form .select-box select {
     font-size: 17px;
   }
 }
-.professionals .services .services__card {
-  padding: 50px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-}
-.professionals .services .services__card .single__service {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 0px 15px #dfdfdf;
-  width: 30%;
-  transition: all 300ms;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.professionals .services .services__card .single__service:hover {
-  transform: scale(1.1);
-}
-@media screen and (max-width: 999px) {
-  .professionals .services .services__card .single__service {
-    width: 45%;
-  }
-}
-@media screen and (max-width: 630px) {
-  .professionals .services .services__card .single__service {
-    width: 100%;
-  }
-}
-.professionals .services .services__card .single__service .services__header {
-  height: 200px;
-  position: relative;
-}
-.professionals .services .services__card .single__service .services__header h2 {
-  color: #ffffff;
-  background: #3992ff;
-  border: 1px solid #3992ff;
-  text-align: center;
-  padding: 15px;
-  position: absolute;
-  cursor: pointer;
-  letter-spacing: 2px;
-  font-size: 18px;
-  margin: 0;
-  border-radius: 50px;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.professionals .services .services__card .single__service .services__header h2:hover {
-  background: #fff;
-  color: #3992ff;
-}
-.professionals .services .services__card .single__service .services__text {
-  padding: 40px 30px;
-}
 
 .avantages__pro {
   padding: 50px 100px;
@@ -9289,47 +9204,6 @@ form .select-box select {
   .avantages__pro h2 {
     font-size: 14px;
   }
-}
-.avantages__pro .avantages__container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.avantages__pro .avantages__container .avantages__box {
-  width: 25%;
-  padding: 20px;
-}
-@media screen and (max-width: 999px) {
-  .avantages__pro .avantages__container .avantages__box {
-    width: 40%;
-  }
-}
-@media screen and (max-width: 799px) {
-  .avantages__pro .avantages__container .avantages__box {
-    width: 100%;
-    text-align: center;
-  }
-}
-.avantages__pro .avantages__container .avantages__box h3 {
-  color: #323232;
-  text-transform: uppercase;
-}
-.avantages__pro .avantages__container .avantages__box .avantages__top {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 799px) {
-  .avantages__pro .avantages__container .avantages__box .avantages__top {
-    justify-content: center;
-  }
-}
-.avantages__pro .avantages__container .avantages__box .avantages__top i {
-  color: #323232;
-  font-size: 25px;
 }
 
 .contact__professionals {
@@ -9387,62 +9261,6 @@ form .select-box select {
     font-size: 17px;
   }
 }
-.collectivity .services .services__card {
-  padding: 50px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-}
-.collectivity .services .services__card .single__service {
-  text-align: center;
-  background: #ffffff;
-  box-shadow: 0px 0px 15px #dfdfdf;
-  width: 30%;
-  transition: all 300ms;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.collectivity .services .services__card .single__service:hover {
-  transform: scale(1.1);
-}
-@media screen and (max-width: 999px) {
-  .collectivity .services .services__card .single__service {
-    width: 45%;
-  }
-}
-@media screen and (max-width: 630px) {
-  .collectivity .services .services__card .single__service {
-    width: 100%;
-  }
-}
-.collectivity .services .services__card .single__service .services__header {
-  height: 200px;
-  position: relative;
-}
-.collectivity .services .services__card .single__service .services__header h2 {
-  color: #ffffff;
-  background: #3992ff;
-  border: 1px solid #3992ff;
-  text-align: center;
-  padding: 15px;
-  position: absolute;
-  cursor: pointer;
-  letter-spacing: 2px;
-  font-size: 18px;
-  margin: 0;
-  border-radius: 50px;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.collectivity .services .services__card .single__service .services__header h2:hover {
-  background: #fff;
-  color: #3992ff;
-}
-.collectivity .services .services__card .single__service .services__text {
-  padding: 40px 30px;
-}
 
 .avantages__collectivity {
   padding: 50px 100px;
@@ -9450,7 +9268,7 @@ form .select-box select {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #94c356b6;
+  background-color: #94c356;
 }
 @media screen and (max-width: 393px) {
   .avantages__collectivity {
@@ -9477,47 +9295,6 @@ form .select-box select {
   .avantages__collectivity h2 {
     font-size: 14px;
   }
-}
-.avantages__collectivity .avantages__container {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.avantages__collectivity .avantages__container .avantages__box {
-  width: 25%;
-  padding: 20px;
-}
-@media screen and (max-width: 999px) {
-  .avantages__collectivity .avantages__container .avantages__box {
-    width: 40%;
-  }
-}
-@media screen and (max-width: 799px) {
-  .avantages__collectivity .avantages__container .avantages__box {
-    width: 100%;
-    text-align: center;
-  }
-}
-.avantages__collectivity .avantages__container .avantages__box h3 {
-  color: #323232;
-  text-transform: uppercase;
-}
-.avantages__collectivity .avantages__container .avantages__box .avantages__top {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 799px) {
-  .avantages__collectivity .avantages__container .avantages__box .avantages__top {
-    justify-content: center;
-  }
-}
-.avantages__collectivity .avantages__container .avantages__box .avantages__top i {
-  color: #323232;
-  font-size: 25px;
 }
 
 .contact__collectivity {

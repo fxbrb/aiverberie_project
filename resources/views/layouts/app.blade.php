@@ -25,7 +25,7 @@
     <header>
         <div class="header__logo">
             <a href="/">
-                <img data-aos="fade-down" data-aos-delay="100" src="{{ asset('images/logo-association-intermediaire.svg') }}" alt="Logo association intermédiaire de Verberie">
+                <img data-aos="fade-down" data-aos-delay="100" src="{{ asset('images/logo-association-intermediaire.svg') }}" alt="Logo {{ config('app.name') }}">
             </a>
         </div>
         <div class="header__menu">
@@ -59,12 +59,12 @@
                 <div class="main__partners">
                     <h2>Partenaires</h2>
                     <div class="partners__list">
-                        <img src="https://via.placeholder.com/90x90" alt="">
-                        <img src="https://via.placeholder.com/90x90" alt="">
-                        <img src="https://via.placeholder.com/90x90" alt="">
-                        <img src="https://via.placeholder.com/90x90" alt="">
-                        <img src="https://via.placeholder.com/90x90" alt="">
-                        <img src="https://via.placeholder.com/90x90" alt="">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
+                        <img src="https://via.placeholder.com/90x90" alt="Logo partenaire">
                     </div>
                 </div>
                 <div class="main__infos">
