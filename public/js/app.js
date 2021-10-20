@@ -2140,20 +2140,6 @@ leaflet__WEBPACK_IMPORTED_MODULE_1___default().tileLayer("https://api.mapbox.com
   zoomOffset: -1,
   accessToken: "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA"
 }).addTo(mymap);
-(dropzone__WEBPACK_IMPORTED_MODULE_2___default().options.myDropzone) = {
-  // camelized version of the `id`
-  paramName: "attachment[]",
-  // The name that will be used to transfer the file
-  maxFilesize: 2,
-  // MB
-  accept: function accept(file, done) {
-    if (file.name == "justinbieber.jpg") {
-      done("Naha, you don't.");
-    } else {
-      done();
-    }
-  }
-};
 
 /***/ }),
 
