@@ -1,7 +1,9 @@
 require("./bootstrap");
 import $ from "jquery";
 import L from "leaflet";
-import Dropzone from "dropzone";
+// import Dropzone from "dropzone";
+
+// Dropzone.autoDiscover = false;
 
 $(document).ready(function () {
     $("header .header__menu ul li a")
@@ -91,6 +93,4 @@ L.tileLayer(
             "pk.eyJ1IjoiYWx5YXIiLCJhIjoiY2t1d25sanJsMDYwNjJ1cXFkZGUweTV1MiJ9.im61QJxZqpFlimrS18u5TA",
     }
 ).addTo(mymap);
-
-
 

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Nova\Directors;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -55,9 +56,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function cards()
     {
-        return [
-            new Help,
-        ];
+        return [];
     }
 
     /**

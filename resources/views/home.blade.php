@@ -12,13 +12,13 @@
 
             <div class="services__list">
                 <a data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" href="{{ route('particular') }}" class="service individual">
-                    <p>Services aux particuliers</p>
+                    <p>Particuliers</p>
                 </a>
                 <a data-aos="flip-up" data-aos-duration="700" data-aos-delay="300" href="{{ route('professional') }}" class="service pro">
-                    <p>Services aux professionnels</p>
+                    <p>Professionnels</p>
                 </a>
                 <a data-aos="fade-right" data-aos-duration="700" data-aos-delay="500" href="{{ route('collectivity') }}" class="service community">
-                    <p>Services aux collectivité</p>
+                    <p>Collectivités</p>
                 </a>
             </div>
         </section>

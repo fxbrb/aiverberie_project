@@ -80,7 +80,7 @@
     </section>
 
     <section class="contact__jobs" id="contact__jobs">
-        <form method="POST" action="{{route('job.send')}}" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">
+        <form method="POST" action="{{route('job.send')}}" enctype="multipart/form-data" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300" class="">
             <h2 data-aos="fade-down" data-aos-duration="800" data-aos-delay="400"><span>Demande d'offre d'emploi</span></h2>
             <p></p>
             @csrf
@@ -115,11 +115,15 @@
             @error('job')
             <div class="input__error">{{ $message }}</div>
             @enderror
+            <!-- <div class="dropzone" id="upload-img" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900"></div> -->
             <div class="file-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
-                <label>Votre CV & Lettre de motivation</label>
+                <label>Votre CV </label>
                 <input type="file" id="attachment" name="attachment[]" multiple>
+            </div>
 
-                <!-- <input type="file" name="attachment[]"/> -->
+            <div class="file-box" data-aos="fade-down" data-aos-duration="800" data-aos-delay="900">
+                <label>Votre Lettre de motivation</label>
+                <input type="file" id="attachment" name="attachment[]" multiple>
             </div>
             @error('attachment')
             <div class="input__error">{{ $message }}</div>
@@ -141,7 +145,7 @@
             <div class="input__error">{{ $message }}</div>
             @enderror
             <div class="button" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
-                <input type="submit" class="submit-btn" value="Envoyer">
+                <input type="submit" class="submit-btn" id="submit" value="Envoyer">
             </div>
         </form>
     </section>
@@ -151,7 +155,6 @@
 @endsection
 
 @push('scripts')
-
 <script>
     $(document).ready(function() {
         $("#job").select2({
@@ -159,7 +162,18 @@
             maximumSelectionLength: 4,
             allowClear: true,
         });
-
     });
+
+
+    // Dropzone.options.uploadImg = {
+    //     url: '{{route("job.send")}}',
+    //     paramName: "attachment",
+    //     autoProcessQueue: false,
+    //     uploadMultiple: true,
+    //     acceptedFiles: ".jpg,.png,.jpeg,application/pdf",
+    //     dictDefaultMessage: "Déposez vos fichiers ici",
+    //     maxFiles: 10,
+    //     addRemoveLinks: true,
+    // }
 </script>
 @endpush

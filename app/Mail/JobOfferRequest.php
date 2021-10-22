@@ -21,7 +21,7 @@ class JobOfferRequest extends Mailable
      */
     public function __construct($filename, $info)
     {
-        $this->filename = $filename;
+        $this->filename =  $filename;
         $this->info = $info;
     }
 

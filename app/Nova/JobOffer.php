@@ -54,6 +54,8 @@ class JobOffer extends Resource
         return __('Offre d\'emploi');
     }
 
+    public static $group = "Offre d'emploi";
+
     /**
      * Get the fields displayed by the resource.
      *
